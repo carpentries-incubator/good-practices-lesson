@@ -11,13 +11,13 @@
 carpentry: 'incubator' # FIXME
 
 # Overall title for pages.
-title: 'Testing'
+title: 'Good Practices in Python'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2024-03-27'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'testing, pytest, unit test, integration test'
+keywords: 'Modular code, documentation, testing, continuous integration'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
