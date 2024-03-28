@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Lesson Title: All in One View</title>
+<title>Good practices in research software development: All in One View</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="assets/styles.css">
 <script src="assets/scripts.js" type="text/javascript"></script><!-- mathjax --><script type="text/x-mathjax-config">
@@ -65,7 +65,7 @@
       <img class="small-logo" alt="Carpentries Incubator" src="assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Lesson Title
+      Good practices in research software development
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -76,7 +76,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Lesson Title
+            Good practices in research software development
           </span>
         </li>
         <li class="nav-item">
@@ -108,7 +108,7 @@
   </div>
 <!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
-  Lesson Title
+  Good practices in research software development
 </div>
 
 <aside class="col-md-12 lesson-progress"><div style="width: %" class="percentage">
@@ -181,7 +181,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="testing.html">1. Testing</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -244,11 +244,11 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-introduction"><p>Content from <a href="introduction.html">Using Markdown</a></p>
+<section id="aio-testing"><p>Content from <a href="testing.html">Testing</a></p>
 <hr>
-<p>Last updated on 2023-07-24 |
+<p>Last updated on 2024-03-28 |
         
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/episodes/introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -260,8 +260,8 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>Why should I write automated tests for my code?</li>
+<li>How do I write a good unit test?</li>
 </ul>
 </div>
 </div>
@@ -271,128 +271,341 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Use <code>pytest</code> to write and run unit tests</li>
+<li>Understand that testing has many forms.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<section id="basics-of-testing"><h2 class="section-heading">Basics of testing<a class="anchor" aria-label="anchor" href="#basics-of-testing"></a>
 </h2>
 <hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.txt" class="external-link">Pandoc-flavored Markdown</a>
-for static files and <a href="https://rmarkdown.rstudio.com/" class="external-link">R
-Markdown</a> for dynamic files that can render code into output. Please
-refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson:</p>
-<ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
-</ol>
-<div id="challenge-1-can-you-do-it" class="callout challenge">
+<p>The first step toward getting the right answers from our programs is
+to assume that mistakes <em>will</em> happen and to guard against them.
+This is called <strong>defensive programming</strong> and the most
+common way to do it is to add alarms and tests into our code so that it
+checks itself.</p>
+<p><strong>Testing</strong> should be a seamless part of scientific
+software development process. This is analogous to experiment design in
+the experimental science world:</p>
+<ul>
+<li>At the beginning of a new project, tests can be used to help guide
+the overall architecture of the project.</li>
+<li>The act of writing tests can help clarify how the software should be
+perform when you are done.</li>
+<li>In fact, starting to write the tests <em>before</em> you even write
+the software might be advisable. Such a practice is called
+<em>test-driven development</em>.</li>
+</ul></section><section id="tests-types"><h2 class="section-heading">Tests types<a class="anchor" aria-label="anchor" href="#tests-types"></a>
+</h2>
+<hr class="half-width">
+<p>There are many ways to test software, such as:</p>
+<ul>
+<li>Assertions</li>
+<li>Exceptions</li>
+<li>Unit Tests</li>
+<li>Integration Tests</li>
+</ul>
+<p><em>Exceptions and Assertions</em>: While writing code,
+<code>exceptions</code> and <code>assertions</code> can be added to
+sound an alarm as runtime problems come up. These kinds of tests, are
+embedded in the software itself and handle, as their name implies,
+exceptional cases rather than the norm.</p>
+<p><em>Unit Tests</em>: Unit tests investigate the behavior of units of
+code (such as functions, classes, or data structures), ideally the
+smallest possible units. By validating each software unit across the
+valid range of its input and output parameters, tracking down unexpected
+behavior that may appear when the units are combined is made vastly
+simpler.</p>
+<p><em>Integration Tests</em>: Integration tests check that various
+pieces of the software work together as expected. They can be both on
+small scales, or system wide.</p>
+<div id="how-much-testing-is-enough" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="how-much-testing-is-enough" class="callout-inner">
+<h3 class="callout-title">How much testing is enough?<a class="anchor" aria-label="anchor" href="#how-much-testing-is-enough"></a>
+</h3>
+<div class="callout-content">
+<p>Possible tests metrics are:</p>
+<ul>
+<li>Lines of code.</li>
+<li>Test coverage <a href="https://sonarcloud.io/component_measures?id=eWaterCycle_ewatercycle&amp;metric=coverage&amp;view=treemap&amp;selected=eWaterCycle_ewatercycle%3Aewatercycle" class="external-link">example</a>:
+to check to which extent the software is being coverted by the
+tests.</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section id="pytest"><h2 class="section-heading">PyTest<a class="anchor" aria-label="anchor" href="#pytest"></a>
+</h2>
+<hr class="half-width">
+<p>Currently, <a href="docs.pytest.org">PyTest</a> is the recommended
+Python testing framework. Let’s see how it can be used to run the
+tests.</p>
+<p>First, create a directory and navigate into it:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">mkdir</span> pytest-example</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">cd</span> pytest-example</span></code></pre>
+</div>
+<p>Then, create a file <code>example.py</code> containing an example
+test. You can use for favourite text editor for creating the file:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">nano</span> example.py</span></code></pre>
+</div>
+<p>And then, in the file, type:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>   <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a> </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a> </span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="kw">def</span> test_add():  <span class="co"># Special name!</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="dv">2</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">5</span>  <span class="co"># What's `assert`? 🤔</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="st">'space'</span>, <span class="st">'ship'</span>) <span class="op">==</span> <span class="st">'spaceship'</span></span></code></pre>
+</div>
+<div id="whats-assert" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="whats-assert" class="callout-inner">
+<h3 class="callout-title">What’s assert?<a class="anchor" aria-label="anchor" href="#whats-assert"></a>
+</h3>
+<div class="callout-content">
+<p>Assertions are the simplest type of test. They are used as a tool for
+bounding acceptable behavior during runtime. The assert keyword in
+python has the following behavior:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="cf">assert</span> <span class="dv">1</span><span class="op">==</span><span class="dv">1</span>  <span class="co"># passes</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="cf">assert</span> <span class="dv">1</span><span class="op">==</span><span class="dv">2</span>  <span class="co"># throws error:</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+AssertionError</code></pre>
+</div>
+<p>That is, assertions raise an <code>AssertionError</code> if the
+comparison is false. It does nothing at all if the comparison is true.
+Assertions are therefore a simple way of writing tests.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="cf">assert</span> mean([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]) <span class="op">==</span> <span class="dv">2</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Activate your conda environment:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">conda</span> activate goodpractices</span></code></pre>
+</div>
+<p>Check the version of <code>pytest</code>:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">pytest</span> <span class="at">--version</span></span></code></pre>
+</div>
+<p>Finally, run the test:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>pytest example.py
+======================== test session starts ========================
+platform linux -- Python 3.6.9, pytest-7.0.1, pluggy-1.0.0
+rootdir: /home/ole/Desktop/pytest-texample
+collected 1 item
+ 
+example.py .                                                  [100%]
+ 
+========================= 1 passed in 0.00s =========================
+</code></pre>
+</div>
+<p>When <code>pytest</code> is run, it will search all directories below
+where it was called, find all of the Python files in these directories
+whose names start or end with <code>test</code>, import them, and run
+all of the functions and classes whose names start with
+<code>test</code> or <code>Test</code>. This automatic registration of
+test code saves tons of human time and allows us to focus on what is
+important: writing more tests.</p>
+<p>When you run <code>pytest</code>, it will print a dot
+(<code>.</code>) on the screen for every test that passes, an
+<code>F</code> for every test that fails or where there was an
+unexpected error. The tests pass when they do not throw errors. In rarer
+situations you may also see an <code>s</code> indicating a skipped tests
+(because the test is not applicable on your system) or a <code>x</code>
+for a known failure (because the developers fixed the problem shown in
+the test). After the dots, pytest will print summary information.</p>
+<div id="tests-collection" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="tests-collection" class="callout-inner">
+<h3 class="callout-title">Tests collection<a class="anchor" aria-label="anchor" href="#tests-collection"></a>
+</h3>
+<div class="callout-content">
+<p>If you do <code>pytest dir</code>, the <code>pytest</code> package
+‘sniffs-out’ the tests in the directory and ran them together to produce
+a report of the sum of the files and functions matching the regular
+expression <code>[Tt]est[-_]*</code>.</p>
+</div>
+</div>
+</div>
+<p>What happens if we break the test on purpose?</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">-</span> b  <span class="co"># Uh oh, mistake! 😱</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a> </span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a> </span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="kw">def</span> test_add():</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="dv">2</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="st">'space'</span>, <span class="st">'ship'</span>) <span class="op">==</span> <span class="st">'spaceship'</span></span></code></pre>
+</div>
+<p>Let’s save the edits and run <code>pytest</code> again:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>======================== test session starts =========================
+platform linux -- Python 3.6.9, pytest-7.0.1, pluggy-1.0.0
+rootdir: /home/ole/Desktop/pytest-texample
+collected 1 item
+ 
+example.py F                                                   [100%]
+ 
+============================== FAILURES ==============================
+______________________________ test_add ______________________________
+ 
+    def test_add():
+&gt;       assert add(2, 3) == 5
+E       assert -1 == 5
+E        +  where -1 = add(2, 3)
+ 
+example.py:6: AssertionError</code></pre>
+</div>
+<p>You can notice that functions fail on the first error, but
+<strong>all test functions are executed</strong>.</p>
+<div id="pure-vs-impure-functions" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="pure-vs-impure-functions" class="callout-inner">
+<h3 class="callout-title">Pure vs impure functions<a class="anchor" aria-label="anchor" href="#pure-vs-impure-functions"></a>
+</h3>
+<div class="callout-content">
+<p><strong>Pure functions</strong> are deterministic, have a return
+value, have no side effects[1], and have referential transparency[2].
+Thus, pure functions are easy to understand and test.</p>
+<p>[1] Side effects: interactions of a function with its surroundings.
+[2] Replacing a function call with the return of that function should
+not change anything.</p>
+<p>Examples of pure functions:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">def</span> last(my_array):</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>    <span class="cf">return</span> my_array[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a> </span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre>
+</div>
+<p>On the other hand, impure functions can be both intuitive:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>my_list <span class="op">=</span> []</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a> </span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="kw">def</span> append_to_my_list(item):</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    my_list.append(item)</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a> </span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a> </span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="kw">def</span> read_data(file_name):</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>    <span class="cf">return</span> pd.read_csv(file_name)</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a> </span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a> </span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="kw">def</span> get_random_number(number):</span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a>    <span class="cf">return</span> random.random()</span></code></pre>
+</div>
+<p>And not so intuitive:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">def</span> hello(name):</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello"</span>, name)</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a> </span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a> </span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a> </span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="kw">def</span> append(a_list, item):</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a>    a_list <span class="op">+=</span> [item]</span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>    <span class="cf">return</span> a_list</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a> </span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="bu">print</span>(nums)            <span class="co"># [1, 2]</span></span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a><span class="bu">print</span>(append(nums, <span class="dv">3</span>)) <span class="co"># [1, 2, 3]</span></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="bu">print</span>(nums)            <span class="co"># [1, 2, 3] 😬</span></span></code></pre>
+</div>
+<p>Some side effects can be indeed necessary or hard to spot.</p>
+<p>Use pure functions when possible 👌</p>
+</div>
+</div>
+</div>
+<div id="test-driven-development-fizzbuzz-function-15-min" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?<a class="anchor" aria-label="anchor" href="#challenge-1-can-you-do-it"></a>
+<div id="test-driven-development-fizzbuzz-function-15-min" class="callout-inner">
+<h3 class="callout-title">Test-Driven Development: FizzBuzz Function (15
+min)<a class="anchor" aria-label="anchor" href="#test-driven-development-fizzbuzz-function-15-min"></a>
 </h3>
 <div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
+<p>The function <code>fizz_buzz()</code> takes an integer argument and
+returns it, BUT:</p>
+<ul>
+<li>Fails on zero or negative numbers.</li>
+<li>Instead returns “Fizz” on multiples of 3.</li>
+<li>Instead returns “Buzz” on multiples of 5.</li>
+<li>Instead returns “FizzBuzz” on multiples of 3 and 5.</li>
+</ul>
+<p>Create an empty function <code>fizz_buzz()</code> and go through the
+conditions listed above, one by one:</p>
+<ol style="list-style-type: decimal">
+<li>Write a test for the condition.</li>
+<li>Edit the <code>fizz_buzz()</code> function until the test
+passes.</li>
+</ol>
+<p>Then discuss together the different solutions.</p>
 </div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">Output</h4>
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
+<p>We are still working on example code for a solution. But as long as
+you added tests for all the different conditions and your final
+<code>fizz_buzz()</code> function passes all of them your solution is
+correct.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge-2-how-do-you-nest-solutions-within-challenge-blocks"></a>
-</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section id="figures"><h2 class="section-heading">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>You can use standard markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
-<div class="callout-content">
-<p>Callout sections can highlight information.</p>
-<p>They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present “asides”: content that is
-not central to the narrative of the lesson, e.g. by providing the answer
-to a commonly-asked question.</p>
-</div>
-</div>
-</div>
-</section><section id="math"><h2 class="section-heading">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -402,14 +615,14 @@ this:</p>
 </h3>
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Tests are meant for preserving functionality by detecting new errors
+early and facilitating reproducibility for research software.</li>
+<li>Tests can help users in verifying correct installation and improving
+correctness for research output.</li>
+<li>Tests enable developers to make refactoring easier and simplify
+external contributions.</li>
+<li>Test-Driven Development (TDD) is an optional tool in your
+toolbox.</li>
 </ul>
 </div>
 </div>
@@ -431,12 +644,12 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
         
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/README.md" class="external-link">Edit on GitHub</a>
         
 	
-        | <a href="https://github.com/carpentries/workbench-template-md/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/carpentries/workbench-template-md/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/carpentries/workbench-template-md/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/" class="external-link">Source</a></p>
+				<p><a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:training@esciencecenter.nl">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
         
@@ -456,18 +669,18 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://carpentries.github.io/workbench-template-md/aio.html",
+  "@id": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/aio.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "software, data, lesson, The Carpentries",
+  "keywords": "Modular code, documentation, testing, continuous integration",
   "name": "All in One View",
   "creativeWorkStatus": "active",
-  "url": "https://carpentries.github.io/workbench-template-md/aio.html",
-  "identifier": "https://carpentries.github.io/workbench-template-md/aio.html",
+  "url": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/aio.html",
+  "identifier": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/aio.html",
   "dateCreated": "2024-03-27",
-  "dateModified": "2024-03-27",
-  "datePublished": "2024-03-27"
+  "dateModified": "2024-03-28",
+  "datePublished": "2024-03-28"
 }
 
   </script><script>
