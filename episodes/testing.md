@@ -279,7 +279,7 @@ Then discuss together the different solutions.
 
 ## Solution
  
-Add here the preferred solution. We don't have a ready one. 
+We are still working on example code for a solution. But as long as you added tests for all the different conditions and your final `fizz_buzz()` function passes all of them your solution is correct.
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
