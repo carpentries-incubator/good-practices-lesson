@@ -13,7 +13,7 @@ exercises: 25
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand the place of testing in a scientific workflow.
+- Use `pytest` to write and run unit tests
 - Understand that testing has many forms.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
