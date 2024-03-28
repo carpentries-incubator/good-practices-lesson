@@ -11,7 +11,7 @@
 carpentry: 'incubator' # FIXME
 
 # Overall title for pages.
-title: 'Good Practices in Python'
+title: 'Good practices in research software development'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2024-03-27'
