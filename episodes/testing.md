@@ -6,7 +6,8 @@ exercises: 25
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Why test?
+- Why should I write automated tests for my code?
+- How do I write a good unit test?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
