@@ -185,7 +185,19 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="testing.html">1. Testing</a>
+        <a href="3-testing.html">1. Testing</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="4-ci.html">2. Continuous Integration</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -248,11 +260,11 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-testing"><p>Content from <a href="testing.html">Testing</a></p>
+<section id="aio-3-testing"><p>Content from <a href="3-testing.html">Testing</a></p>
 <hr>
-<p>Last updated on 2024-03-28 |
+<p>Last updated on 2024-06-03 |
         
-        <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/3-testing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -600,7 +612,7 @@ passes.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>We are still working on example code for a solution. But as long as
 you added tests for all the different conditions and your final
@@ -627,6 +639,236 @@ correctness for research output.</li>
 external contributions.</li>
 <li>Test-Driven Development (TDD) is an optional tool in your
 toolbox.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</section></section><section id="aio-4-ci"><p>Content from <a href="4-ci.html">Continuous Integration</a></p>
+<hr>
+<p>Last updated on 2024-06-03 |
+        
+        <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/4-ci.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How can we implement automatic testing each time we push changes to
+the repository?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Set up Continuous Integration using GitHub Actions</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="introducing-continuous-integration"><h2 class="section-heading">Introducing Continuous integration<a class="anchor" aria-label="anchor" href="#introducing-continuous-integration"></a>
+</h2>
+<hr class="half-width">
+<p>Follow <a href="https://lyashevska.github.io/ds-cr-slides/ci/" class="external-link">these
+slides</a> to understand the basics of continuous integration.</p>
+</section><section id="full-cycle-collaborative-workflow"><h2 class="section-heading">Full-cycle collaborative workflow<a class="anchor" aria-label="anchor" href="#full-cycle-collaborative-workflow"></a>
+</h2>
+<hr class="half-width">
+<div id="exercise-full-cycle-collaborative-workflow" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="exercise-full-cycle-collaborative-workflow" class="callout-inner">
+<h3 class="callout-title">Exercise: Full-cycle collaborative
+workflow<a class="anchor" aria-label="anchor" href="#exercise-full-cycle-collaborative-workflow"></a>
+</h3>
+<div class="callout-content">
+<p>The exercise takes 30-40 minutes.</p>
+<p>In this exercise, everybody will:</p>
+<ul>
+<li>A. Set up automated tests with GitHub Actions</li>
+<li>B. Make test fail / find a bug in their repository</li>
+<li>C. Open an issue in their repository</li>
+<li>D. Then each one will clone the repo of one of their exercise
+partners, fix the bug, and open a pull request (GitHub)</li>
+<li>E. Everybody then merges their co-worker’s change</li>
+</ul>
+<div class="section level4">
+<h4 id="step-1-create-a-new-repository-on-github">Step 1: Create a new repository on GitHub<a class="anchor" aria-label="anchor" href="#step-1-create-a-new-repository-on-github"></a>
+</h4>
+<ul>
+<li>Select a different repository name than your colleagues (otherwise
+forking the same name will be strange)</li>
+<li>Before you create the repository, select “Initialize this repository
+with a README” (otherwise you try to clone an empty repo).</li>
+<li>Share the repository URL with your exercise group via shared
+document or chat</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="step-2-clone-your-own-repository-add-code-commit-and-push">Step 2: Clone your own repository, add code, commit, and push<a class="anchor" aria-label="anchor" href="#step-2-clone-your-own-repository-add-code-commit-and-push"></a>
+</h4>
+<p>Clone the repository.</p>
+<p>Add a file <code>example.py</code> containing:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="kw">def</span> subtract(a, b):</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b  <span class="co"># do not change this line until prompted to do so.</span></span></code></pre>
+</div>
+<p>Write a test function <code>def test_add()</code> for
+<code>add</code> to check that this function is working properly. Do NOT
+add a test function for <code>subtract</code> (yet). Run pytest to
+ensure it works</p>
+<p>Then stage the file (<code>git add &lt;filename&gt;</code>), commit
+(<code>git commit -m "some commit message"</code>), and push the changes
+(<code>git push</code>).</p>
+</div>
+<div class="section level4">
+<h4 id="step-3-enable-automated-testing">Step 3: Enable automated testing<a class="anchor" aria-label="anchor" href="#step-3-enable-automated-testing"></a>
+</h4>
+<p>In this step we will enable GitHub Actions. - Select “Actions” from
+your GitHub repository page. You get to a page “Get started with GitHub
+Actions”. - Select the button for “Set up this workflow” under Python
+Application.</p>
+<p><img src="fig/ci-python-application-workflow.png" class="figure"> Select “Python
+application” as the starter workflow.</p>
+<p>GitHub creates the following file for you in the subfolder
+<code>.github/workflows</code>:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># This workflow will install Python dependencies, run tests and lint with a single version of Python</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> Python application</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="fu">on</span><span class="kw">:</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="at">  </span><span class="fu">push</span><span class="kw">:</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at"> main </span><span class="kw">]</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="at">  </span><span class="fu">pull_request</span><span class="kw">:</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="at">    </span><span class="fu">branches</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at"> main </span><span class="kw">]</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="fu">jobs</span><span class="kw">:</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="at">  </span><span class="fu">build</span><span class="kw">:</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="at">    </span><span class="fu">runs-on</span><span class="kw">:</span><span class="at"> ubuntu-latest</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="at">    </span><span class="fu">steps</span><span class="kw">:</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/checkout@v2</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Set up Python 3.9</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="at">      </span><span class="fu">uses</span><span class="kw">:</span><span class="at"> actions/setup-python@v2</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="at">      </span><span class="fu">with</span><span class="kw">:</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="at">        </span><span class="fu">python-version</span><span class="kw">:</span><span class="at"> </span><span class="fl">3.9</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Install dependencies</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>        python -m pip install --upgrade pip</span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>        pip install flake8 pytest</span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Lint with flake8</span></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>        # stop the build if there are Python syntax errors or undefined names</span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics</span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide</span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics</span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Test with pytest</span></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="fu">      run</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>        pytest</span></code></pre>
+</div>
+<p>Commit the change by pressing the “Start Commit” button.</p>
+</div>
+<div class="section level4">
+<h4 id="step-4-verify-that-tests-have-been-automatically-run">Step 4: Verify that tests have been automatically run<a class="anchor" aria-label="anchor" href="#step-4-verify-that-tests-have-been-automatically-run"></a>
+</h4>
+<p>Observe in the repository how the test succeeds. While the test is
+executing, the repository has a yellow marker. This is replaced with a
+green check mark, once the test succeeds.</p>
+<figure><img src="fig/ci-tests-succeed-screenshot.png" class="figure mx-auto d-block"></figure><p>Green check means passed.</p>
+<p>Also browse the “Actions” tab and look at the steps there and their
+output.</p>
+</div>
+<div class="section level4">
+<h4 id="step-5-add-a-test-which-reveals-a-problem">Step 5: Add a test which reveals a problem<a class="anchor" aria-label="anchor" href="#step-5-add-a-test-which-reveals-a-problem"></a>
+</h4>
+<p>After you committed the workflow file, your GitHub repository will be
+ahead of your local cloned repository. Update your local cloned
+repository:</p>
+<pre><code>$ git pull origin main</code></pre>
+<p>Next uncomment add a test function <code>test_subtract</code> for to
+check that the <code>subtract</code> function can subtract two numbers
+from each other, and push it to your remote repository. Verify that the
+test suite now fails on the “Actions” tab (GitHub).</p>
+</div>
+<div class="section level4">
+<h4 id="step-6-open-an-issue-on-github">Step 6: Open an issue on GitHub<a class="anchor" aria-label="anchor" href="#step-6-open-an-issue-on-github"></a>
+</h4>
+<p>Open a new issue in your repository about the broken test (click the
+“Issues” button on GitHub and write a title for the issue). The plan is
+that your colleague will fix the issue through a pull request</p>
+</div>
+<div class="section level4">
+<h4 id="step-7-fork-and-clone-the-repository-of-your-colleague">Step 7: Fork and clone the repository of your colleague<a class="anchor" aria-label="anchor" href="#step-7-fork-and-clone-the-repository-of-your-colleague"></a>
+</h4>
+<p>Fork the repository using the GitHub web interface. Make sure you
+clone the fork after you have forked it. Do not clone your colleague’s
+repository directly.</p>
+</div>
+<div class="section level4">
+<h4 id="step-8-fix-the-broken-test">Step 8: Fix the broken test<a class="anchor" aria-label="anchor" href="#step-8-fix-the-broken-test"></a>
+</h4>
+<p>Fix the function now and run pytest to check that it works. Then push
+to <em>your fork</em>. Check whether the action now also passes.</p>
+</div>
+<div class="section level4">
+<h4 id="step-9-open-a-pull-request-github">Step 9: Open a pull request (GitHub)<a class="anchor" aria-label="anchor" href="#step-9-open-a-pull-request-github"></a>
+</h4>
+<p>Then before accepting the pull request from your colleague, observe
+how GitHub Actions automatically tested the code.</p>
+<p>If you forgot to reference the issue number in the commit message,
+you can still add it to the pull request:
+<code>my pull request title, closes #NUMBEROFTHEISSUE</code></p>
+</div>
+<div class="section level4">
+<h4 id="step-10">Step 10<a class="anchor" aria-label="anchor" href="#step-10"></a>
+</h4>
+<p>Observe how accepting the pull request automatically closes the issue
+(provided the commit message or the pull request contained the correct
+issue number).</p>
+<p>Discuss whether this is a useful feature. And if it is, why do you
+think is it useful?</p>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Use GitHub Actions to automate checking your code each time you push
+changes to the repository.</li>
 </ul>
 </div>
 </div>
@@ -683,8 +925,8 @@ any links that you are not going to use.
   "url": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/aio.html",
   "identifier": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/aio.html",
   "dateCreated": "2024-03-27",
-  "dateModified": "2024-05-28",
-  "datePublished": "2024-05-28"
+  "dateModified": "2024-06-03",
+  "datePublished": "2024-06-03"
 }
 
   </script><script>
