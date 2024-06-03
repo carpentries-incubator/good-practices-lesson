@@ -71,7 +71,7 @@ In this step we will enable GitHub Actions.
 - Select "Actions" from your GitHub repository page. You get to a page "Get started with GitHub Actions". 
 - Select the button for "Set up this workflow" under Python Application.
 
-![](fig/python-application-workflow.png)
+![](fig/ci-python-application-workflow.png)
 Select “Python application” as the starter workflow.
 
 GitHub creates the following file for you in the subfolder `.github/workflows`:
