@@ -58,17 +58,18 @@ contact: 'training@esciencecenter.nl'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- testing.md
+episodes:
+- 3-testing.md
+- 4-ci.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
