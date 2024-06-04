@@ -186,7 +186,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="3-testing.html">1. Testing</a>
+        <a href="2-documentation.html">1. Document your research software</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -198,7 +198,19 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="4-ci.html">2. Continuous Integration</a>
+        <a href="3-testing.html">2. Testing</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="4-ci.html">3. Continuous Integration</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -262,7 +274,376 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-3-testing"><p>Content from <a href="3-testing.html">Testing</a></p>
+<section id="aio-2-documentation"><p>Content from <a href="2-documentation.html">Document your research software</a></p>
+<hr>
+<p>Last updated on 2024-06-04 |
+        
+        <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/2-documentation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 55 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What can I do to make my code more easily understandable?</li>
+<li>What information should go into comments?</li>
+<li>What are docstrings and what information should go into
+docstrings?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Know what makes a good documentation</li>
+<li>Learn what tools can be used for writing documentation</li>
+<li>Be able to motivate a balanced decision: sometimes READMEs are
+absolutely enough</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>Instructor Note</h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<p>Use <a href="https://lyashevska.github.io/ds-cr-slides/documentation/" class="external-link">these
+slides</a> as a guidance.</p>
+<p>The main purpose of this lesson is to make sure participants
+understand that DOCUMENTATION IS IMPORTANT. The goal is more to trigger
+participants then to teach them all the different ways one could
+document a project. It is good to communicate this (and that this will
+give more time for the other parts of the workshop).</p>
+</div>
+</div>
+</div>
+</div>
+<section id="why-we-teach-this-lesson"><h2 class="section-heading">Why we teach this lesson<a class="anchor" aria-label="anchor" href="#why-we-teach-this-lesson"></a>
+</h2>
+<hr class="half-width">
+<p>Specific motivations:</p>
+<ul>
+<li>Code documentation becomes quickly unmanageable if not part of the
+source code.</li>
+<li>It helps people to quickly use your code thus reducing the time
+spent to explain over and again to new users.</li>
+<li>It helps people to collaborate.</li>
+<li>It improves the design of your code.</li>
+</ul></section><section id="what-makes-a-good-documentation"><h2 class="section-heading">What makes a good documentation?<a class="anchor" aria-label="anchor" href="#what-makes-a-good-documentation"></a>
+</h2>
+<hr class="half-width">
+<div id="exercise-think-of-good-and-bad-examples" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="exercise-think-of-good-and-bad-examples" class="callout-inner">
+<h3 class="callout-title">Exercise: Think of good and bad examples<a class="anchor" aria-label="anchor" href="#exercise-think-of-good-and-bad-examples"></a>
+</h3>
+<div class="callout-content">
+<p>Write down your thoughts in the collaborative documents. Respond with
+emojis <span class="emoji" data-emoji="+1">👍</span> <span class="emoji" data-emoji="scream_cat">🙀</span> to your colleagues’ answers. - Think
+of projects of which you like the documentation. What do you like about
+them? - Think of projects for which you don’t like the documentation.
+What don’t you like about them? Are you missing anything?</p>
+<p><strong>NB: You can choose a mature library with lots of users for
+this exercise, but try to also think of less mature projects you had to
+collaborate on, or papers you had to reproduce.</strong></p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<ul>
+<li>It is important to document code</li>
+<li>Think about the people reading your documentation (your
+audience)</li>
+<li>Depending on the purpose and state of the project
+documentation needs to meet different criteria. </li>
+<li>For most scientific projects, in-code documentation and a well
+thought out README file is enough.</li>
+<li>Documentation should be tracked with corresponding code</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section><section id="types-of-documentation"><h2 class="section-heading">Types of documentation<a class="anchor" aria-label="anchor" href="#types-of-documentation"></a>
+</h2>
+<hr class="half-width">
+<p>There are different types of documentation:</p>
+<ul>
+<li>README files</li>
+<li>in-code documentation</li>
+<li>API documentation</li>
+<li>Tutorials</li>
+</ul>
+<p>We will discuss a few of them in more depth.</p>
+</section><section id="writing-good-readme-files"><h2 class="section-heading">Writing good README files<a class="anchor" aria-label="anchor" href="#writing-good-readme-files"></a>
+</h2>
+<hr class="half-width">
+<p>The README file is the first thing a user/collaborator sees. It
+should include:</p>
+<ul>
+<li>A descriptive project title</li>
+<li>Motivation (why the project exists)</li>
+<li>How to setup</li>
+<li>Copy-pastable quick start code example</li>
+<li>Link or instructions for contributing</li>
+<li>Recommended citation</li>
+</ul>
+<div id="exercise-readme-draft-or-improve-a-readme-for-one-of-your-recent-projects-in-breakout-rooms" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="exercise-readme-draft-or-improve-a-readme-for-one-of-your-recent-projects-in-breakout-rooms" class="callout-inner">
+<h3 class="callout-title">Exercise README: Draft or improve a README for
+one of your recent projects (in breakout rooms)<a class="anchor" aria-label="anchor" href="#exercise-readme-draft-or-improve-a-readme-for-one-of-your-recent-projects-in-breakout-rooms"></a>
+</h3>
+<div class="callout-content">
+<p>Try to draft a brief README or review a README which you have written
+for one of your projects.</p>
+<p>You can work individually, but you could also discuss whether
+anything can be improved on your neighbour’s README file(s).</p>
+<p>Think about the user (which can be a future you) of your project,
+what does this user need to know to use or contribute to the project?
+And how do you make your project attractive to use or contribute to?</p>
+<p>(Optional): Try the <a href="https://hemingwayapp.com/" class="external-link uri">https://hemingwayapp.com/</a> to analyse your README file
+and make your writing bold and clear.</p>
+</div>
+</div>
+</div>
+</section><section id="in-code-documentation"><h2 class="section-heading">In-code documentation<a class="anchor" aria-label="anchor" href="#in-code-documentation"></a>
+</h2>
+<hr class="half-width">
+<p>In-code documentation: - Makes code more understandable - Explains
+decisions we made</p>
+<div class="section level3">
+<h3 id="when-not-to-use-in-code-documentation">When not to use in-code documentation:<a class="anchor" aria-label="anchor" href="#when-not-to-use-in-code-documentation"></a>
+</h3>
+<ul>
+<li>When the code is self-explanatory</li>
+<li>To replace good variable/function names</li>
+<li>To replace version control</li>
+<li>To keep old (zombie) code around</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="readable-code-vs-commented-code">Readable code vs commented code<a class="anchor" aria-label="anchor" href="#readable-code-vs-commented-code"></a>
+</h3>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># convert from degrees celsius to fahrenheit</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">def</span> convert(d):</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>    <span class="cf">return</span> d <span class="op">*</span> <span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span> <span class="op">+</span> <span class="dv">32</span></span></code></pre>
+</div>
+<p>vs</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> celsius_to_fahrenheit(degrees):</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="cf">return</span> degrees <span class="op">*</span> <span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span> <span class="op">+</span> <span class="dv">32</span></span></code></pre>
+</div>
+<div id="writing-good-comments---in-code-1-comments" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="writing-good-comments---in-code-1-comments" class="callout-inner">
+<h3 class="callout-title">Writing good comments - In-code-1:
+Comments<a class="anchor" aria-label="anchor" href="#writing-good-comments---in-code-1-comments"></a>
+</h3>
+<div class="callout-content">
+<p>Let’s take a look at two example comments (comments in Python start
+with <code>#</code>):</p>
+<p><strong>Comment A</strong></p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>  <span class="co"># now we check if temperature is below -50</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  <span class="cf">if</span> temperature <span class="op">&lt;</span> <span class="op">-</span><span class="dv">50</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"ERROR: temperature is too low"</span>)</span></code></pre>
+</div>
+<p><strong>Comment B</strong></p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>  <span class="co"># we regard temperatures below -50 degrees as measurement errors</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="cf">if</span> temperature <span class="op">&lt;</span> <span class="op">-</span><span class="dv">50</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"ERROR: temperature is too low"</span>)</span></code></pre>
+</div>
+<p><strong>Which of these comments is more useful? Can you explain
+why?</strong></p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<ul>
+<li>
+<strong>Comment A</strong> describes <strong>what</strong> happens
+in this piece of code. This can be useful for somebody who has never
+seen Python or a program, but for somebody who has, it can feel like a
+redundant commentary.</li>
+<li>
+<strong>Comment B</strong> is probably more useful as it describes
+<strong>why</strong> this piece of code is there, i.e. its
+<strong>purpose</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="what-are-docstrings-and-how-can-they-be-useful"><h2 class="section-heading">What are “docstrings” and how can they be useful?<a class="anchor" aria-label="anchor" href="#what-are-docstrings-and-how-can-they-be-useful"></a>
+</h2>
+<hr class="half-width">
+<p>Here is function <code>fahrenheit_to_celsius</code> which converts
+temperature in Fahrenheit to Celsius.</p>
+<p>The first set of examples uses <strong>regular comments</strong>:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co"># This function converts a temperature in Fahrenheit to Celsius.</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(temp_f: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    temp_c <span class="op">=</span> (temp_f <span class="op">-</span> <span class="fl">32.0</span>) <span class="op">*</span> (<span class="fl">5.0</span><span class="op">/</span><span class="fl">9.0</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="cf">return</span> temp_c</span></code></pre>
+</div>
+<p>The second set uses <strong>docstrings or similar concepts</strong>.
+Please compare the two (above and below):</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PY<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode py" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(temp_f: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">    Converts a temperature in Fahrenheit to Celsius.</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">    temp_f : float</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">        The temperature in Fahrenheit.</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">    float</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">        The temperature in Celsius.</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>    temp_c <span class="op">=</span> (temp_f <span class="op">-</span> <span class="fl">32.0</span>) <span class="op">*</span> (<span class="fl">5.0</span><span class="op">/</span><span class="fl">9.0</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>    <span class="cf">return</span> temp_c</span></code></pre>
+</div>
+<p>Docstrings can do a bit more than just comments: - Tools can generate
+help text automatically from the docstrings. - Tools can generate
+documentation pages automatically from code.</p>
+<p>It is common to write docstrings for functions, classes, and
+modules.</p>
+<p>Good docstrings describe: - What the function does - What goes in
+(including the type of the input variables) - What goes out (including
+the return type)</p>
+<p><strong>Naming is documentation</strong>: Giving explicit,
+descriptive names to your code segments (functions, classes, variables)
+already provides very useful and important documentation. In practice
+you will find that for simple functions it is unnecessary to add a
+docstring when the function name and variable names already give enough
+information.</p>
+</section><section id="userapi-documentation"><h2 class="section-heading">User/API documentation<a class="anchor" aria-label="anchor" href="#userapi-documentation"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>What if a README file is not enough?</li>
+<li>How do I easily create user documentation?</li>
+</ul>
+<div class="section level3">
+<h3 id="tools">Tools<a class="anchor" aria-label="anchor" href="#tools"></a>
+</h3>
+<p>You can use the following tools to generate user or API
+documentation:</p>
+<div class="section level4">
+<h4 id="sphinx-documentation-generator">Sphinx (documentation generator)<a class="anchor" aria-label="anchor" href="#sphinx-documentation-generator"></a>
+</h4>
+<ul>
+<li>creates nicely-formatted HTML pages out of .md or .rst files</li>
+<li>programming language independent</li>
+</ul>
+</div>
+<div class="section level4">
+<h4 id="github-pages-deploy-your-documentation">Github pages (deploy your documentation)<a class="anchor" aria-label="anchor" href="#github-pages-deploy-your-documentation"></a>
+</h4>
+<ul>
+<li>set up inside your GitHub repository</li>
+<li>automatically deploys your Sphinx-generated documentation</li>
+</ul>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>Instructor Note</h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div class="accordion-body">
+<p>You can show the example documentation deployed on GitHub pages here:
+<a href="https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/" class="external-link uri">https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/</a></p>
+<p>Then, you can show that this content comes from simple markdown
+files, like: <a href="https://github.com/esciencecenter-digital-skills/good-practices-documentation-example/blob/main/doc/another-feature.md?plain=1" class="external-link uri">https://github.com/esciencecenter-digital-skills/good-practices-documentation-example/blob/main/doc/another-feature.md?plain=1</a></p>
+<p>In addition, you can explain that with a few settings you can
+automatically generate documentation from docstrings. You can give <a href="https://nanopub.readthedocs.io/en/latest/reference/client.html" class="external-link uri">https://nanopub.readthedocs.io/en/latest/reference/client.html</a>
+as an example.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Depending on the purpose and state of the project documentation
+needs to meet different criteria.</li>
+<li>Good README files provide a good landing place for anyone that is
+new to your project</li>
+<li>Comments should describe the why for your code not the what.</li>
+<li>Writing docstrings can be a good way to write documentation while
+you type code since it also makes it possible to query that information
+from outside the code or to auto-generate documentation pages.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</div>
+</div>
+</section></section><section id="aio-3-testing"><p>Content from <a href="3-testing.html">Testing</a></p>
 <hr>
 <p>Last updated on 2024-06-03 |
         
