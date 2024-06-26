@@ -1,7 +1,7 @@
 ---
 title: Modular Code Development
 teaching: 30
-exercises: 20
+exercises: 30
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
