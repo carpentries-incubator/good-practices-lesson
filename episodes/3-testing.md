@@ -19,6 +19,8 @@ exercises: 25
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Basics of testing
+Follow [these slides](https://esciencecenter-digital-skills.github.io/digital-skills-slides/modules/good-practices-lesson/testing-slides) to understand 
+the basics of testing.
 
 The first step toward getting the right answers from our programs is to assume
 that mistakes *will* happen and to guard against them.  This is called
