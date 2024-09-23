@@ -18,7 +18,7 @@ exercises: 45
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introducing Continuous integration
-Follow [these slides](https://lyashevska.github.io/ds-cr-slides/ci/) to understand 
+Follow [these slides](https://esciencecenter-digital-skills.github.io/digital-skills-slides/modules/good-practices-lesson/ci-slides) to understand 
 the basics of continuous integration.
 
 ## Full-cycle collaborative workflow

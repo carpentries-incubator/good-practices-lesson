@@ -22,7 +22,7 @@ exercises: 30
 
 Modularity refers to the practice of building software from smaller, self-contained, and independent elements. Each element is designed to handle a specific set of tasks, contributing to the overall functionality of the system.
 
-We will explain modular coding in the slides. You can view the slides [here](https://lyashevska.github.io/ds-cr-slides/).
+We will explain modular coding in the slides. You can view the slides [here](https://esciencecenter-digital-skills.github.io/digital-skills-slides/modules/good-practices-lesson/modular-code-slides).
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
