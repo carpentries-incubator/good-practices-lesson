@@ -280,8 +280,35 @@ Then discuss together the different solutions.
 :::::::::::::::::::::::: solution 
 
 ## Solution
- 
-We are still working on example code for a solution. But as long as you added tests for all the different conditions and your final `fizz_buzz()` function passes all of them your solution is correct.
+
+Here is a potential solution:
+```python
+import pytest
+
+def fizz_buzz(input):
+    if input <= 0:
+        raise ValueError('Negative or zero input not allowed')
+    if input % 3 == 0 and input % 5 == 0:
+        return 'FizzBuzz'
+    if input % 3 == 0:
+        return 'Fizz'
+    if input % 5 == 0:
+        return 'Buzz'
+    return input
+
+def test_fizz_buzz():
+    with pytest.raises(ValueError):
+        fizz_buzz(0)
+    with pytest.raises(ValueError):
+        fizz_buzz(-2)
+    assert fizz_buzz(1) == 1
+    assert fizz_buzz(3) == 'Fizz'
+    assert fizz_buzz(4) == 4
+    assert fizz_buzz(5) == 'Buzz'
+    assert fizz_buzz(6) == 'Fizz'
+    assert fizz_buzz(10) == 'Buzz'
+    assert fizz_buzz(15) == 'FizzBuzz'
+```
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
