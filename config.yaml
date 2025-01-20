@@ -59,10 +59,11 @@ contact: 'training@esciencecenter.nl'
 
 # Order of episodes in your lesson
 episodes:
-- 1-modular-code.md
-- 2-documentation.md
-- 3-testing.md
-- 4-ci.md
+- 1-intro.md
+- 2-modular-code.md
+- 3-documentation.md
+- 4-testing.md
+- 5-ci.md
 
 # Information for Learners
 learners:
