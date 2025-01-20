@@ -1,72 +1,80 @@
-# The Carpentries Workbench Template Markdown Lesson
+# Good practices in research software development
+The key objective of this lesson is to grow researchers' software skills necessary to apply good practices
+that enable open and reproducible research. 
+The lesson focuses on building modular, reusable, maintainable, sustainable, reproducible, testable, and robust software. 
+This will allow you to more easily organize, maintain and share your code. 
 
-This lesson is a template lesson that uses [The Carpentries Workbench][workbench]. 
+The main themes that are addressed are generically applicable, but please note that a lot of the exercises and demonstrations are in Python.
 
-## Note about lesson life cycle stage
-Although the `config.yaml` states the life cycle stage as pre-alpha, **the template is stable and ready to use**. The life cycle stage is preset to `"pre-alpha"` as this setting is appropriate for new lessons initialised using the template.
+This lesson is heavily inspired by and based on the awesome [CodeRefinery training materials](https://coderefinery.org/lessons/).
+It originated from teaching many workshops using bits and pieces from the CodeRefinery materials 
+that went through many cycles of improvement, but became a complicated set of pointers to other materials, making it hard to teach by new instructors. 
+At some point there was a need for One Holy Source of Lesson Material to teach a 1-day Good practices in research software development workshop.
 
-## Create a new repository from this template
+## How does this lesson relate to Intermediate research software development?
+This lesson is more an introduction to good practices in research software development for researchers that are relatively unexperienced in programming.
+If you find the topics that are covered in this lesson too basic, you could consider the [Intermediate Research Software Development](https://carpentries-incubator.github.io/python-intermediate-development/) lesson.
+That lesson has a similar focus, but also teaches more intermediate topics like software architecture, advanced coding best practices, 
+Integrated Software Development environments and is targeted to slightly more advanced research software engineers. 
 
-To use this template to start a new lesson repository, 
-make sure you're logged into Github.   
-Visit https://github.com/carpentries/workbench-template-md/generate
-and follow the instructions.
-Checking the 'Include all branches' option will save some time waiting for the first website build
-when your new repository is initialised.
+## Teaching this lesson?
+Do you want to teach Good practices in research software development? This material is open-source and freely available. 
+Are you planning on using our material in your teaching? 
+We would love to help you prepare to teach the lesson and receive feedback on how it could be further improved, based on your experience in the workshop.
 
-If you have any questions, contact [@tobyhodges](https://github.com/tobyhodges)
+You can notify us that you plan to teach this lesson by creating an issue in this repository. 
 
-## Configure a new lesson
+Also, it would be great if you can update [this overview of all workshops taught with this lesson material](workshops.md). 
+This helps us show the impact of developing open-source lessons to our funders.
 
-Follow the steps below to
-complete the initial configuration of a new lesson repository built from this template:
+## Target Audience
+It is assumed that participants already write code for their research, but no expertise is required.
+Basic Git and GitHub knowledge is required. The lesson is typically taught as day 2 in a 2-day workshop, 
+after a first day in which [Collaborative version control with Git and GitHub](https://carpentries-incubator.github.io/collaborative-git-and-github-lesson/) is taught.
+Some experience in navigating file trees and editing files in a terminal session, as well as basic knowledge of Python programming is recommended.
 
-1. **Make sure GitHub Pages is activated:**
-   navigate to _Settings_,
-   select _Pages_ from the left sidebar,
-   and make sure that `gh-pages` is selected as the branch to build from.
-   If no `gh-pages` branch is available, check _Actions_ to see if the first
-   website build workflows are still running.
-   The branch should become available when those have completed.
-1. **Adjust the `config.yaml` file:**
-   this file contains global parameters for your lesson site.
-   Individual fields within the file are documented with comments (beginning with `#`)
-   At minimum, you should adjust all the fields marked 'FIXME':
-   - `title`
-   - `created`
-   - `keywords`
-   - `life_cycle` (the default, _pre-alpha_, is the appropriate for brand new lessons)
-   - `contact`
-1. **Annotate the repository** with site URL and topic tags:
-   navigate back to the repository landing page and
-   click on the gear wheel/cog icon (similar to ⚙️) 
-   at the top-right of the _About_ box.
-   Check the "Use your GitHub Pages website" option,
-   and [add some keywords and other annotations to describe your lesson](https://cdh.carpentries.org/the-carpentries-incubator.html#topic-tags)
-   in the _Topics_ field.
-   At minimum, these should include:
-   - `lesson`
-   - the life cycle of the lesson (e.g. `pre-alpha`)
-   - the human language the lesson is written in (e.g. `deutsch`)
-1. **Adjust the 
-   `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, and `LICENSE.md` files**
-   as appropriate for your project.
-   -  `CODE_OF_CONDUCT.md`: 
-      if you are using this template for a project outside The Carpentries,
-      you should adjust this file to describe 
-      who should be contacted with Code of Conduct reports,
-      and how those reports will be handled.
-   -  `CONTRIBUTING.md`:
-      depending on the current state and maturity of your project,
-      the contents of the template Contributing Guide may not be appropriate.
-      You should adjust the file to help guide contributors on how best
-      to get involved and make an impact on your lesson.
-   -  `LICENSE.md`:
-      in line with the terms of the CC-BY license,
-      you should ensure that the copyright information 
-      provided in the license file is accurate for your project.
-1. **Update this README with 
-   [relevant information about your lesson](https://carpentries.github.io/lesson-development-training/collaborating-newcomers.html#readme)**
-   and delete this section.
+## Lesson development sprints
+We regularly host lesson development sprints, in which we work together at the lesson.
+Send an email to o.lyashevska@esciencecenter.nl if you want to get involved.
 
-[workbench]: https://carpentries.github.io/sandpaper-docs/
+## Contributing
+
+We welcome all contributions to improve the lesson! Maintainers will do their best to help you
+if you have any questions, concerns, or experience any difficulties along the way.
+
+We'd like to ask you to familiarize yourself with our [Contribution Guide](CONTRIBUTING.md) and
+have a look at the [more detailed guidelines][lesson-example] on proper formatting, ways to
+render the lesson locally, and even how to write new episodes.
+
+Please see the current list of
+[issues](https://github.com/esciencecenter-digital-skills/good-practices-lesson/issues)
+for ideas for contributing to this repository.
+
+For making your contribution, we use the GitHub flow, which is nicely explained in the
+chapter [Contributing to a Project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
+in Pro Git by Scott Chacon.
+Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg).
+This indicates that the maintainers will welcome a pull request fixing this issue.
+
+## Setup the Lesson Website locally
+
+To build this lesson locally, you should follow the [setup instructions for the
+workbench](https://carpentries.github.io/sandpaper-docs/#overview). In short,
+make sure you have R, Git, and Pandoc installed, open R and use the following
+commands to install/update the packages needed for the infrastructure:
+
+```r
+# register the repositories for The Carpentries and CRAN
+options(repos = c(
+  carpentries = "https://carpentries.r-universe.dev/",
+  CRAN = "https://cran.rstudio.com/"
+))
+
+# Install the template packages to your R library
+install.packages(c("sandpaper", "varnish", "pegboard", "tinkr"))
+```
+
+## Rendering the website locally
+
+See the [Carpentries Workbench usage instructions](https://carpentries.github.io/workbench/#usage) on how to render the website locally.
+
