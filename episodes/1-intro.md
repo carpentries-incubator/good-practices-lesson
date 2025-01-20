@@ -25,7 +25,7 @@ Look through [these introduction slides](https://esciencecenter-digital-skills.g
 Initially, without software engineering tools, development speed is high, 
 but it quickly drops as the project grows more complex. 
 
-Instead, if you use the right tools and skills the development speed will increase once you get further in a project.
+Instead, if you use the right tools and skills the development speed will be slower at first because of the necessary setup, but increases as you get further in a project.
 
 Nevertheless, all projects are different. 
 A lot of the tools and skills we teach are useful in complex long-running projects, 
