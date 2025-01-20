@@ -4,10 +4,19 @@
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/01-introduction.html</loc>
   </url>
   <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/1-intro.html</loc>
+  </url>
+  <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/1-modular-code.html</loc>
   </url>
   <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/2-documentation.html</loc>
+  </url>
+  <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/2-modular-code.html</loc>
+  </url>
+  <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/3-documentation.html</loc>
   </url>
   <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/3-testing.html</loc>
@@ -16,7 +25,13 @@
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/4-ci.html</loc>
   </url>
   <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/4-testing.html</loc>
+  </url>
+  <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/404.html</loc>
+  </url>
+  <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/5-ci.html</loc>
   </url>
   <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/CODE_OF_CONDUCT.html</loc>
@@ -37,10 +52,19 @@
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/01-introduction.html</loc>
   </url>
   <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/1-intro.html</loc>
+  </url>
+  <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/1-modular-code.html</loc>
   </url>
   <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/2-documentation.html</loc>
+  </url>
+  <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/2-modular-code.html</loc>
+  </url>
+  <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/3-documentation.html</loc>
   </url>
   <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/3-testing.html</loc>
@@ -49,7 +73,13 @@
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/4-ci.html</loc>
   </url>
   <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/4-testing.html</loc>
+  </url>
+  <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/404.html</loc>
+  </url>
+  <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/5-ci.html</loc>
   </url>
   <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/CODE_OF_CONDUCT.html</loc>
@@ -85,6 +115,9 @@
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/testing.html</loc>
   </url>
   <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/workshops.html</loc>
+  </url>
+  <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor-notes.html</loc>
   </url>
   <url>
@@ -101,5 +134,8 @@
   </url>
   <url>
     <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/testing.html</loc>
+  </url>
+  <url>
+    <loc>https://esciencecenter-digital-skills.github.io/good-practices-lesson/workshops.html</loc>
   </url>
 </urlset>
