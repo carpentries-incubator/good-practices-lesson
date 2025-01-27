@@ -2,6 +2,8 @@
 site: sandpaper::sandpaper_site
 ---
 
+## Summary
+
 This lesson grows a researchers' software skills necessary to apply good practices that enable open and reproducible research. 
 The lesson focuses on building modular, reusable, maintainable, sustainable, reproducible, testable, and robust software. 
 This will allow you to more easily organize, maintain and share your code. 
