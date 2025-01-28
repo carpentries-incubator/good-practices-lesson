@@ -71,6 +71,13 @@ python --version
 pytest --version
 ```
 
+which should return something like:
+
+```output
+Python 3.13.1
+pytest 8.3.4
+```
+
 To deactivate the environment, run
 
 ```bash
