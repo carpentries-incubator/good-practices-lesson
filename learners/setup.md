@@ -64,7 +64,7 @@ conda activate myenv
 conda install pytest
 ```
 
-You should now have a conda environment with a pytest in it. Verify the environment:
+You should now have a conda environment with pytest in it. Verify the environment:
 
 ```bash
 python --version
