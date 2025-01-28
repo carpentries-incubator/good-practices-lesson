@@ -8,7 +8,7 @@ title: Setup
 
 ### Details
 
-1. Git setup is required for this lesson. Please follow [this link](https://carpentries-incubator.github.io/collaborative-git-and-github-lesson/) for detailed instructions. 
+1. Git is required for this lesson. Please follow [this link](https://carpentries-incubator.github.io/collaborative-git-and-github-lesson/) for detailed setup instructions. 
 2. Additionally you want to install [Miniconda](https://docs.anaconda.com/miniconda/) and dependencies.
 There are different ways of installing it, we describe below a quick command line install. If you are not comfortable with it, please refer to [this installation](https://docs.anaconda.com/miniconda/install/#quick-command-line-install) using graphical installer.
 
