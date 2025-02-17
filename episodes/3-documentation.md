@@ -7,16 +7,21 @@ exercises: 30
 ::::::::::::::::::::::::::::::::::::::: objectives
 
 - Know what makes a good documentation
-- Learn what tools can be used for writing documentation
-- Be able to motivate a balanced decision: sometimes READMEs are absolutely enough
+- Know how to document your project and get credit for your work 
+- Learn what docstrings are and how to use them
+- Learn what tools can be used for generating documentation
+- Implement MkDocs to generate comprehensive project documentation
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- What can I do to make my code more easily understandable?
-- What information should go into comments?
+- What different types of documentation are there?
+- How to help others to use your project?
 - What are docstrings and what information should go into docstrings?
+- What different tools exist for generating documentation?
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -32,10 +37,12 @@ The main purpose of this lesson is to make sure participants understand that DOC
 
 Specific motivations:
 
-- Code documentation becomes quickly unmanageable if not part of the source code.
-- It helps people to quickly use your code thus reducing the time spent to explain over and again to new users.
-- It helps people to collaborate.
-- It improves the design of your code.
+- Code documentation should be part of your source code so that it remains easily accessible and maintainable for all users.
+- Good documentation allows others to install and make use of your code independently and increase the impact of your project.
+- Documentation can facilitate collaborations by helping us onboard new project members quickly and more easily.
+- By writing documention you think about the design of your code.
+
+
 
 ## What makes a good documentation?
 
@@ -60,12 +67,10 @@ Respond with emojis :+1: :scream_cat: to your colleagues' answers.
 ## Types of documentation
 There are different types of documentation:
 
-- README files
-- in-code documentation
-- API documentation
+- README and CITATION files
+- in-code documentation (Docstrings)
 - Tutorials
 
-We will discuss a few of them in more depth.
 
 ## Writing good README files
 The README file is the first thing a user/collaborator sees. It should include:
@@ -75,7 +80,9 @@ The README file is the first thing a user/collaborator sees. It should include:
 - How to setup
 - Copy-pastable quick start code example
 - Link or instructions for contributing
-- Recommended citation
+- Badges
+- Citation 
+
 
 ::: challenge
 ### Exercise README: Draft or improve a README for one of your recent projects (in breakout rooms)
@@ -89,9 +96,17 @@ Think about the user (which can be a future you) of your project, what does this
 (Optional): Try the https://hemingwayapp.com/ to analyse your README file and make your writing bold and clear.
 :::
 
-## In-code documentation
+### Badges
+TODO: What they are, suggest zenodo, pytest, code coverage, documentation, licence.
+Link to shields.io
 
-In-code documentation:
+### Citation ()
+TODO: introduce CITATION.cff, cffinit.
+TODO: Add exercise.
+
+## In-code documentation 
+
+Documentation strings:
 - Makes code more understandable
 - Explains decisions we made
 
@@ -155,7 +170,7 @@ Let's take a look at two example comments (comments in Python start with `#`):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## What are "docstrings" and how can they be useful?
+### What are "docstrings" and how can they be useful?
 
 Here is function `fahrenheit_to_celsius` which converts temperature in
 Fahrenheit to Celsius.
@@ -192,16 +207,19 @@ def fahrenheit_to_celsius(temp_f: float) -> float:
     return temp_c
 ```
 
-Docstrings can do a bit more than just comments:
-- Tools can generate help text automatically from the docstrings.
-- Tools can generate documentation pages automatically from code.
+Docstrings are more powerful than comments:
+
+- Docstrings are automatically extracted when calling the help function.
+- Tools can generate documentation pages automatically from docstrings known as API documentation.
 
 It is common to write docstrings for functions, classes, and modules.
 
+TODO: Introduce how to write docstrings and show an example of API documentation.
 Good docstrings describe:
 - What the function does
 - What goes in (including the type of the input variables)
 - What goes out (including the return type)
+
 
 **Naming is documentation**:
 Giving explicit, descriptive names to your code segments (functions, classes,
@@ -210,20 +228,27 @@ practice you will find that for simple functions it is unnecessary to add a
 docstring when the function name and variable names already give enough
 information.
 
-## User/API documentation
-* What if a README file is not enough?
-* How do I easily create user documentation?
+TODO: Add docstring exercise. 
+Idea add docstrings to convertion function and improve naming.
 
-### Tools
-You can use the following tools to generate user or API documentation:
 
-#### Sphinx (documentation generator)
+## Tools for generating and deploying documentation
+You can use the following tools to generate user or API documentation.
+
+### Generating documentation 
+
+MkDocs and Sphinx:
 - creates nicely-formatted HTML pages out of .md or .rst files
 - programming language independent
 
-#### Github pages (deploy your documentation)
+### Deploying documentation using Github pages
+
 - set up inside your GitHub repository
 - automatically deploys your Sphinx-generated documentation
+
+TODO: add lesson materials and exercise for generating documentation with MkDocs
+TODO: add lesson materials and optional exercise for generating documentation with Sphinx
+
 
 ::: instructor
 You can show the example documentation deployed on GitHub pages here: https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/
