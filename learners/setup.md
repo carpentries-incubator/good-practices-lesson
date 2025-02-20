@@ -71,6 +71,7 @@ You should now have a conda environment with pytest in it. Verify the environmen
 ```bash
 python --version
 pytest --version
+mkdocs --version
 ```
 
 which should return something like:
@@ -78,6 +79,7 @@ which should return something like:
 ```output
 Python 3.13.1
 pytest 8.3.4
+mkdocs 1.6.1
 ```
 
 To deactivate the environment, run
