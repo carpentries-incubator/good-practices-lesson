@@ -62,6 +62,8 @@ Create a conda environment and install `pytest`.
 conda create --name myenv
 conda activate myenv
 conda install pytest
+conda install conda-forge::mkdocs
+conda install conda-forge::mkdocs-material
 ```
 
 You should now have a conda environment with pytest in it. Verify the environment:
