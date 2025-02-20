@@ -28,7 +28,7 @@ We will explain modular coding in the slides. You can view the slides [here](htt
 
 ## Modularity (20 min)
 
-Carefully review the following code snippet:
+In a new directory (e.g. `mkdir temperature_conversion`), carefully review the following code snippet:
 
 ```python
 def convert_temperature(temperature, unit):
