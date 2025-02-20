@@ -241,6 +241,54 @@ MkDocs and Sphinx:
 - creates nicely-formatted HTML pages out of .md or .rst files
 - programming language independent
 
+#### MkDocs
+
+::: challenge
+### Exercise: Generate MkDocs documentation
+
+Make sure that you have installed mkdocs:
+
+`conda list mkdocs`
+
+Create a new MkDocs project in your current project directory: 
+
+```bash
+# In temperature-conversion
+mkdocs new .    
+```
+```output
+INFO    -  Writing config file: ./mkdocs.yml
+INFO    -  Writing initial docs: ./docs/index.md
+```
+
+This command creates a new MkDocs project in the current directory with a `docs` folder containing an `index.md` file 
+and a `mkdocs.yml` configuration file in the root of our project.
+
+Now, let's fill in the `mkdocs.yml` configuration file for our project.
+
+```yaml
+site_name: Temperature Conversion Documentation
+use_directory_urls: false
+theme:
+  name: "material"
+font: false
+nav:
+  - Temperature Conversion Documentation: index.md
+  - Tutorials: tutorials.md
+  - How-To Guides: how-to-guides.md
+  - Reference: reference.md
+  - Background: explanation.md
+
+plugins:
+  - mkdocstrings
+```
+
+```bash
+mkdocs build
+mkdocs serve
+```
+::: 
+
 ### Deploying documentation using Github pages
 
 - set up inside your GitHub repository
