@@ -70,6 +70,8 @@ You should now have a conda environment with pytest in it. Verify the environmen
 ```bash
 python --version
 pytest --version
+sphinx-build --version
+sphinx-quickstart --version
 ```
 
 which should return something like:
@@ -77,7 +79,11 @@ which should return something like:
 ```output
 Python 3.13.1
 pytest 8.3.4
+sphinx-build 8.1.3
+sphinx-quickstart 8.1.3
 ```
+
+Please note that `sphinx` is an optional material, so if you do not install this now, it can be done when needed during the workshop. 
 
 To deactivate the environment, run
 
