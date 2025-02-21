@@ -583,10 +583,11 @@ In addition, you can explain that with a few settings you can automatically gene
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Depending on the purpose and state of the project documentation needs to meet different criteria.
-- Good README files provide a good landing place for anyone that is new to your project
+- Good README files provide a good landing place for anyone that is new to your project.
 - Comments should describe the why for your code not the what.
 - Writing docstrings can be a good way to write documentation while you type
   code since it also makes it possible
   to query that information from outside the code or to auto-generate
   documentation pages.
+- There are various tools for generating and deploying documentations which translate a set of plain text sources into various output formats.
 ::::::::::::::::::::::::::::::::::::::::::::::::::
