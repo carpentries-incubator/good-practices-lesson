@@ -24,7 +24,10 @@ We would love to help you prepare to teach the lesson and receive feedback on ho
 
 You can notify us that you plan to teach this lesson by creating an issue in this repository. 
 
-Also, it would be great if you can update [this overview of all workshops taught with this lesson material](workshops.md). 
+Please help us keep track of all the workshops taught with this material:
+1. Update [this overview of all workshops taught with this lesson material](workshops). 
+2. Register your workshop at the Carpentries by clicking the 'List an incubator workshop on this page' button on the [Carpentries Incubator](https://carpentries-incubator.org/) website.
+
 This helps us show the impact of developing open-source lessons to our funders.
 
 ## Target Audience
