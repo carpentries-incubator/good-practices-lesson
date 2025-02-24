@@ -109,7 +109,7 @@ A good way to add citation information is by including a [CITATION.cff](https://
 
 Platforms like GitHub, Zenodo, and Zotero reuse the citation metadata you provide. GitHub, for example, automatically renders the file on the repository landing page and provides a BibTeX snippet which users can simply copy! 
 
-#### Minimal example
+#### Minimal example for a CITATION.cff file
 
 ```yaml
 authors:
