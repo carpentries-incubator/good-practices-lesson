@@ -235,7 +235,7 @@ Idea add docstrings to convertion function and improve naming.
 ## Tools for generating and deploying documentation
 You can use the following tools to generate user or API documentation.
 
-### Generating documentation 
+### Tools for generating documentation 
 
 MkDocs and Sphinx:
 - creates nicely-formatted HTML pages out of .md or .rST files
