@@ -392,6 +392,7 @@ some-feature.html
 ```
 
 Now open the file `_build/index.html` in your browser.
+
 - Linux users, type:
   ```console
   $ xdg-open _build/index.html
