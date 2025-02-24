@@ -247,7 +247,7 @@ Like MkDocs, Sphinx is a documetatation generator which translates a set of plai
 
 ::: instructor
 
-Please note that Sphinx is an optional part in this workshop which depends om the progress of the participants. There are optional exercises which can be completed by those participants who are faster. 
+Please note that writing documentation using Sphinx is an optional part in this workshop. For some learners it is enough to know that Sphinx exists, but it is overkill for their current projects. Other learners really want to learn Sphinx and can benefit from it.  In practice, teaching Sphinx can be hard, since the ReStructuredText is quite error-prone when it comes to the right indentation, number of empty lines etcetera. It is up to you if and how you want to include this section when teaching this episode.
 
 :::
 
