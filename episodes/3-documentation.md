@@ -238,7 +238,8 @@ You can use the following tools to generate user or API documentation.
 ### Tools for generating documentation 
 
 MkDocs and Sphinx:
-- creates nicely-formatted HTML pages out of .md or .rST files
+
+- create nicely-formatted HTML pages out of .md or .rST files
 - programming language independent
 
 
