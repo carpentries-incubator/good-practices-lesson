@@ -421,7 +421,7 @@ to have the Read the Docs look).
 
 ##### (Optional) exercise: Adding more Sphinx content
 
-1. Add a entry below `some-feature.md` labeled `another-feature.md` (or a better name) to the `index.rst` file.
+1. Add an entry below `some-feature.md` labeled `another-feature.md` (or a better name) to the `index.rst` file.
 2. Create a file `another-feature.md` in the same directory as the `index.rst` file.
 3. Add some content to `another-feature.md`, rebuild with `sphinx-build . _build`, and refresh the browser to look at the results.
 4. Use the [MyST Typography](https://myst-parser.readthedocs.io/en/latest/syntax/typography.html) page as help.
