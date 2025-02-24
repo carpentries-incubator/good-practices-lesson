@@ -127,7 +127,7 @@ You can use the [cffinit](https://citation-file-format.github.io/cff-initializer
 
 :::challenge
 ### Exercise: Create a CITATION.cff using cffinit
-1. Follow [these](https://book.the-turing-way.org/communication/citable/citable-cffinit) steps to create a CITATION file with cffinit.
+1. Follow [these steps to create a CITATION file with cffinit](https://book.the-turing-way.org/communication/citable/citable-cffinit).
 1. Give this file CITATION.cff name and add it to the root folder of your repository.
 1. What has happened?.
 
