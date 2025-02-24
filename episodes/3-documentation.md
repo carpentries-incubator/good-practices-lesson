@@ -100,9 +100,35 @@ Think about the user (which can be a future you) of your project, what does this
 TODO: What they are, suggest zenodo, pytest, code coverage, documentation, licence.
 Link to shields.io
 
-### Citation ()
-TODO: introduce CITATION.cff, cffinit.
-TODO: Add exercise.
+### Citation
+- It is very easy to correctly cite a paper: all the necessary information (metadata) can be found on the title page or the article website. Software and datasets have no title page, the relevant information is often less obvious.
+- To get credit for your work, you should provide citation information for your software. 
+- One way to do this is by including a [CITATION.cff](https://citation-file-format.github.io/) file (Citation File Format) in the root of your repository. This plain text file, written in YAML format, contains all the necessary citation details in a structured manner. 
+- Platforms like GitHub, Zenodo, and Zotero reuse the citation metadata you provide. GitHub, for example, automatically renders file on the repository landing page and provide BibTeX snippet which users can simply copy! 
+
+#### Minimal example
+
+```yaml
+authors:
+  - family-names: Doe
+    given-names: John
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "My research software"
+```
+We can also include other important information of software such as version, release date, DOI, license, keywords.
+
+#### How to create a CITATION.cff file?
+
+You can use [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/) tool to create citation file. 
+
+:::challenge
+### Exercise: Create a CITATION.cff using cffinit
+1. Follow [these](https://book.the-turing-way.org/communication/citable/citable-cffinit) steps to create a CITATION file with cffinit.
+1. Give this file CITATION.cff name and add it to the root folder of your repository.
+1. What has happened?.
+
+:::
 
 ## In-code documentation 
 
