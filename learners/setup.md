@@ -83,7 +83,7 @@ sphinx-build 8.1.3
 sphinx-quickstart 8.1.3
 ```
 
-Please note that `sphinx` is an optional material, so if you do not install this now, it can be done when needed during the workshop. 
+Please note that `sphinx` is used for optional exercises, so if you do not install this package now, it can be done when needed during the workshop. 
 
 To deactivate the environment, run
 
