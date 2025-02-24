@@ -569,8 +569,8 @@ autodoc2_packages = [
 
 ### Deploying documentation using Github pages
 
-- set up inside your GitHub repository
-- automatically deploys your Sphinx-generated documentation
+- GitHub pages can be setup inside your GitHub repository
+- It automatically deploys your Sphinx-generated documentation. Or in other words it creates a website for you that renders your documentation.
 
 ::: instructor
 You can show the example documentation deployed on GitHub pages here: https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/
