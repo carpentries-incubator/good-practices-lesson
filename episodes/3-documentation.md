@@ -123,7 +123,7 @@ We can also include other important information of software such as version, rel
 
 #### How to create a CITATION.cff file?
 
-You can use [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/) tool to create citation file. 
+You can use the [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/) tool to create a citation file. 
 
 :::challenge
 ### Exercise: Create a CITATION.cff using cffinit
