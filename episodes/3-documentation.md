@@ -68,9 +68,8 @@ Respond with emojis :+1: :scream_cat: to your colleagues' answers.
 There are different types of documentation:
 
 - README and CITATION files
-- in-code documentation (Docstrings)
+- in-code documentation (comments and docstrings)
 - Tutorials
-
 
 ## Writing good README files
 The README file is the first thing a user/collaborator sees. It should include:
@@ -135,11 +134,9 @@ You can use the [cffinit](https://citation-file-format.github.io/cff-initializer
 
 ## In-code documentation 
 
-Documentation strings:
-- Makes code more understandable
-- Explains decisions we made
+In-code documentation make code more understandable and explain decisions we made.
 
-### When not to use in-code documentation:
+### When not to use:
 - When the code is self-explanatory
 - To replace good variable/function names
 - To replace version control
@@ -162,9 +159,9 @@ def celsius_to_fahrenheit(degrees):
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Writing good comments - In-code-1: Comments
+## Exercise: Writing good in-code comments
 
-Let's take a look at two example comments (comments in Python start with `#`):
+Let's take a look at two example comments:
 
 **Comment A**
 
@@ -188,6 +185,8 @@ Let's take a look at two example comments (comments in Python start with `#`):
 
 ## Solution
 
+Comment B is the correct choice!
+
 + **Comment A** describes **what** happens in this piece of code. This can be
     useful for somebody who has never seen Python or a program, but for somebody
     who has, it can feel like a redundant commentary.
@@ -201,7 +200,7 @@ Let's take a look at two example comments (comments in Python start with `#`):
 
 ### What are "docstrings" and how can they be useful?
 
-Here is function `fahrenheit_to_celsius` which converts temperature in
+Docstrings are a special kind of comment that are used to document functions, classes and modules. Here is function `fahrenheit_to_celsius` which converts temperature in
 Fahrenheit to Celsius.
 
 The first set of examples uses **regular comments**:
@@ -216,49 +215,148 @@ def fahrenheit_to_celsius(temp_f: float) -> float:
 The second set uses **docstrings or similar concepts**. Please compare the two
 (above and below):
 
-```py
+```python
 def fahrenheit_to_celsius(temp_f: float) -> float:
     """
     Converts a temperature in Fahrenheit to Celsius.
 
-    Parameters
-    ----------
-    temp_f : float
-        The temperature in Fahrenheit.
+    Args:
+        temp_f (float): The temperature in Fahrenheit.
 
-    Returns
-    -------
-    float
-        The temperature in Celsius.
+    Returns:
+        float: The temperature in Celsius.
     """
 
     temp_c = (temp_f - 32.0) * (5.0/9.0)
     return temp_c
 ```
 
+Unlike regular comments, docstrings are stored as an attribute (`__doc__`) of the object they document and can be extracted programmatically. 
+
 Docstrings are more powerful than comments:
 
-- Docstrings are automatically extracted when calling the help function.
-- Tools can generate documentation pages automatically from docstrings known as API documentation.
+- Docstrings are automatically extracted when calling the `help` function.
+- Tools (e.g. `mkdocs`, `sphinx`) can generate documentation pages automatically from docstrings known as API documentation.
 
-It is common to write docstrings for functions, classes, and modules.
+A good docstring should describe:
 
-TODO: Introduce how to write docstrings and show an example of API documentation.
-Good docstrings describe:
 - What the function does
 - What goes in (including the type of the input variables)
 - What goes out (including the return type)
 
+There are different docstrings styles, such as Google style, numpy style and reStructered style, with Google style being the most common.
 
-**Naming is documentation**:
-Giving explicit, descriptive names to your code segments (functions, classes,
-variables) already provides very useful and important documentation. In
-practice you will find that for simple functions it is unnecessary to add a
-docstring when the function name and variable names already give enough
-information.
+::::::::::::::::::::::::::::::::::::: challenge 
 
-TODO: Add docstring exercise. 
-Idea add docstrings to convertion function and improve naming.
+## Exercise: Write a docstring 
+
+``` python
+def check_temperature_validity(temperature, unit):
+    abs_zero = {"C": -273.15, "F": -459.67, "K": 0}
+    if temperature < abs_zero[unit]:
+        return False
+    return True
+
+```
+:::::::::::::::::::::::: solution 
+
+## Solution
+
+Caveat: without specifying the expected data types of function arguments and return values it is unclear what these values should be! This is called _type hinting_. Lets add types and write the docstring.
+
+``` python
+def check_temperature_validity(temperature: float, unit: str) -> bool:
+    """
+    Checks if a temperature is valid for a given unit.
+
+    Args:
+        temperature (float): The temperature to check.
+        unit (str): The unit of the temperature. Must be "C", "F", or "K".
+
+    Returns:
+        bool: True if the temperature is valid, False otherwise.
+    """
+    abs_zero = {"C": -273.15, "F": -459.67, "K": 0}
+    if temperature < abs_zero[unit]:
+        return False
+    return True
+```
+:::::::::::::::::::::::: 
+
+:::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::::::: challenge 
+## Exercise: Identify proper docstring
+
+Which of the following options is the correct function with a proper docstring?
+
+**Option A**
+
+```python
+def check_unit_validity(unit: str) -> bool:
+    """
+    Checks if a unit is valid.
+
+    Args:
+        unit (str): The unit to check. Must be "C", "F", or "K".
+
+    Returns:
+        bool: True if the unit is valid, False otherwise.
+    """
+    if not unit in ["C", "F", "K"]:
+        return False
+    return True
+```
+
+**Option B**
+
+```python
+def check_unit_validity(unit: int) -> bool:
+    """
+    Checks if a unit is valid.
+
+    Args:
+        unit (int): The unit to check. Must be "C", "F", or "K".
+
+    Returns:
+        bool: True if the unit is valid, False otherwise.
+    """
+    if not unit in ["C", "F", "K"]:
+        return False
+    return True
+```
+
+**Option C**
+
+```python
+def check_unit_validity(unit: str) -> bool:
+    """
+    Validates the unit.
+
+    Parameters:
+        unit (str): The unit to check.
+
+    Returns:
+        bool: True if the unit is valid, False otherwise.
+    """
+    if not unit in ["C", "F", "K"]:
+        return False
+    return True
+```
+
+:::::::::::::::::::::::: solution 
+
+## Solution
+Option A is the correct choice!
+
+- **Option A**: The docstring is detailed and includes descriptions of the arguments and return type, making it the correct choice.
+- **Option B**: The type hint for the unit parameter is incorrect (int instead of str).
+- **Option C**: The docstring is missing the specific valid units ("C", "F", "K") in the description of the unit parameter, making it less informative.
+
+:::::::::::::::::::::::: 
+
+::::::::::::::::::::::::::::::::::::: 
 
 
 ## Tools for generating and deploying documentation
