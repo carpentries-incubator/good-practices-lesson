@@ -134,7 +134,7 @@ You can use the [cffinit](https://citation-file-format.github.io/cff-initializer
 
 ## In-code documentation 
 
-In-code documentation make code more understandable and explain decisions we made.
+In-code documentation makes code more understandable and explains decisions we made.
 
 ### When not to use:
 - When the code is self-explanatory
