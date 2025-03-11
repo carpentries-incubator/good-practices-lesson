@@ -81,24 +81,40 @@ The README file is the first thing a user/collaborator sees. It should include:
 - Copy-pastable quick start code example
 - Link or instructions for contributing
 - Badges
-- Citation 
-
-
-::: challenge
-### Exercise README: Draft or improve a README for one of your recent projects (in breakout rooms)
-
-Try to draft a brief README or review a README which you have written for one of your projects.
-
-You can work individually, but you could also discuss whether anything can be improved on your neighbour's README file(s).
-
-Think about the user (which can be a future you) of your project, what does this user need to know to use or contribute to the project? And how do you make your project attractive to use or contribute to?
-
-(Optional): Try the https://hemingwayapp.com/ to analyse your README file and make your writing bold and clear.
-:::
+- Citation
 
 ### Badges
-TODO: What they are, suggest zenodo, pytest, code coverage, documentation, licence.
-Link to shields.io
+Badges are a way to quickly show the status of a project: is it building, is it tested, what is the license?
+You typically find them on top of the README file:
+
+![Badges on top of a Readme file](fig/documentation-badges.png).
+
+::: challenge
+### Exercise README: 
+#### Draft or improve a README for one of your recent projects (in breakout rooms)
+
+Try to draft a brief README or review a README which you have written for one of your projects.
+You can work individually, but you could also discuss whether anything can be improved on your neighbour's README file(s).
+Think about the user (which can be a future you) of your project, what does this user need to know to use or contribute to the project? And how do you make your project attractive to use or contribute to?
+
+#### Add a badge
+Add a badge to your README file. This comes down to simply adding a link to an image on top of your README file.
+
+You can pick from:
+
+- [A simple static badge](https://shields.io/badges). You can decide what it says and what color it is.
+- [The howfairis badge](https://app.howfairis.com). It indicates whether a project is in line with the 
+[FAIR software recommendations.](https://fair-software.eu/)
+- [A badge reporting test coverage](https://coveralls.io/) (we will discuss testing and continuous integration in upcoming episodes)
+- [A badge linking to a publication in Zenodo](https://tutorials.inbo.be/tutorials/git_zenodo/)
+- [A badge showing the license](https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba)
+
+#### (optional) Make your writing bold and clear
+Try the https://hemingwayapp.com/ to analyse your README file and make your writing bold and clear.
+
+:::
+
+
 
 ### Citation
 It is easy to correctly cite a paper: all the necessary information (metadata) can be found on the title page or the article website. 
