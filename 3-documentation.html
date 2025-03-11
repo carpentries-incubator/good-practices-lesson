@@ -322,7 +322,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Document your research software</h1>
-        <p>Last updated on 2025-02-25 |
+        <p>Last updated on 2025-03-11 |
 
         <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/3-documentation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -398,7 +398,7 @@ collaborate on, or papers you had to reproduce.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul><li>It is important to document code</li>
 <li>Think about the people reading your documentation (your
@@ -427,29 +427,55 @@ should include:</p>
 <li>Link or instructions for contributing</li>
 <li>Badges</li>
 <li>Citation</li>
-</ul><div id="exercise-readme-draft-or-improve-a-readme-for-one-of-your-recent-projects-in-breakout-rooms" class="callout discussion">
+</ul><div class="section level3">
+<h3 id="badges">Badges<a class="anchor" aria-label="anchor" href="#badges"></a></h3>
+<p>Badges are a way to quickly show the status of a project: is it
+building, is it tested, what is the license? You typically find them on
+top of the README file:</p>
+<p><img src="fig/documentation-badges.png" alt="Badges on top of a Readme file" class="figure">.</p>
+<div id="draft-or-improve-a-readme-for-one-of-your-recent-projects-in-breakout-rooms" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="exercise-readme-draft-or-improve-a-readme-for-one-of-your-recent-projects-in-breakout-rooms" class="callout-inner">
-<h3 class="callout-title">Exercise README: Draft or improve a README for one of your recent projects (in breakout rooms)</h3>
+<div id="draft-or-improve-a-readme-for-one-of-your-recent-projects-in-breakout-rooms" class="callout-inner">
+<h3 class="callout-title">Draft or improve a README for one of your recent projects (in breakout rooms)</h3>
 <div class="callout-content">
 <p>Try to draft a brief README or review a README which you have written
-for one of your projects.</p>
-<p>You can work individually, but you could also discuss whether
-anything can be improved on your neighbour’s README file(s).</p>
-<p>Think about the user (which can be a future you) of your project,
-what does this user need to know to use or contribute to the project?
-And how do you make your project attractive to use or contribute to?</p>
-<p>(Optional): Try the <a href="https://hemingwayapp.com/" class="external-link uri">https://hemingwayapp.com/</a> to analyse your README file
+for one of your projects. You can work individually, but you could also
+discuss whether anything can be improved on your neighbour’s README
+file(s). Think about the user (which can be a future you) of your
+project, what does this user need to know to use or contribute to the
+project? And how do you make your project attractive to use or
+contribute to?</p>
+<div class="section level4">
+<h4 id="add-a-badge">Add a badge<a class="anchor" aria-label="anchor" href="#add-a-badge"></a></h4>
+<p>Add a badge to your README file. This comes down to simply adding a
+link to an image on top of your README file.</p>
+<p>You can pick from:</p>
+<ul><li>
+<a href="https://shields.io/badges" class="external-link">A simple static badge</a>. You
+can decide what it says and what color it is.</li>
+<li>
+<a href="https://app.howfairis.com" class="external-link">The howfairis badge</a>. It
+indicates whether a project is in line with the <a href="https://fair-software.eu/" class="external-link">FAIR software recommendations.</a>
+</li>
+<li>
+<a href="https://coveralls.io/" class="external-link">A badge reporting test coverage</a>
+(we will discuss testing and continuous integration in upcoming
+episodes)</li>
+<li><a href="https://tutorials.inbo.be/tutorials/git_zenodo/" class="external-link">A badge
+linking to a publication in Zenodo</a></li>
+<li><a href="https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba" class="external-link">A
+badge showing the license</a></li>
+</ul></div>
+<div class="section level4">
+<h4 id="optional-make-your-writing-bold-and-clear">(optional) Make your writing bold and clear<a class="anchor" aria-label="anchor" href="#optional-make-your-writing-bold-and-clear"></a></h4>
+<p>Try the <a href="https://hemingwayapp.com/" class="external-link uri">https://hemingwayapp.com/</a> to analyse your README file
 and make your writing bold and clear.</p>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="badges">Badges<a class="anchor" aria-label="anchor" href="#badges"></a></h3>
-<p>TODO: What they are, suggest zenodo, pytest, code coverage,
-documentation, licence. Link to shields.io</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a></h3>
@@ -564,7 +590,7 @@ why?</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ul><li>
 <strong>Comment A</strong> describes <strong>what</strong> happens
@@ -656,7 +682,7 @@ Markdown.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Sphinx quickstart demo and optional exercises </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Create a directory for the example documentation, step into it, and
 inside generate the basic documentation template:</p>
@@ -1087,7 +1113,7 @@ any links that you are not going to use.
   "url": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/3-documentation.html",
   "identifier": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/3-documentation.html",
   "dateCreated": "2024-03-27",
-  "dateModified": "2025-02-25",
+  "dateModified": "2025-03-11",
   "datePublished": "2025-03-11"
 }
 
