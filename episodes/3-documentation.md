@@ -287,7 +287,7 @@ def check_temperature_validity(temperature: float, unit: str) -> bool:
 
 
 ::::::::::::::::::::::::::::::::::::: challenge 
-## Exercise: Identify proper docstring
+## Exercise: Identify a proper docstring
 
 Which of the following options is the correct function with a proper docstring?
 
