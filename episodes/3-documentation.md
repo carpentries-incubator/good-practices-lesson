@@ -221,10 +221,10 @@ def fahrenheit_to_celsius(temp_f: float) -> float:
     Converts a temperature in Fahrenheit to Celsius.
 
     Args:
-        temp_f (float): The temperature in Fahrenheit.
+        temp_f: The temperature in Fahrenheit.
 
     Returns:
-        float: The temperature in Celsius.
+        The temperature in Celsius.
     """
 
     temp_c = (temp_f - 32.0) * (5.0/9.0)
@@ -244,47 +244,8 @@ A good docstring should describe:
 - What goes in (including the type of the input variables)
 - What goes out (including the return type)
 
-There are different docstrings styles, such as Google style, numpy style and reStructered style, with Google style being the most common.
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Exercise: Write a docstring 
-
-``` python
-def check_temperature_validity(temperature, unit):
-    abs_zero = {"C": -273.15, "F": -459.67, "K": 0}
-    if temperature < abs_zero[unit]:
-        return False
-    return True
-
-```
-:::::::::::::::::::::::: solution 
-
-## Solution
-
-Caveat: without specifying the expected data types of function arguments and return values it is unclear what these values should be! This is called _type hinting_. Lets add types and write the docstring.
-
-``` python
-def check_temperature_validity(temperature: float, unit: str) -> bool:
-    """
-    Checks if a temperature is valid for a given unit.
-
-    Args:
-        temperature (float): The temperature to check.
-        unit (str): The unit of the temperature. Must be "C", "F", or "K".
-
-    Returns:
-        bool: True if the temperature is valid, False otherwise.
-    """
-    abs_zero = {"C": -273.15, "F": -459.67, "K": 0}
-    if temperature < abs_zero[unit]:
-        return False
-    return True
-```
-:::::::::::::::::::::::: 
-
-:::::::::::::::::::::::::::::::::::::
-
+There are different docstrings styles, such as Google style, numpy style and reStructered style, with Google style being the most common. 
+See documentation [here](https://google.github.io/styleguide/pyguide.html#doc-function-args) for more information.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 ## Exercise: Identify a proper docstring
@@ -299,10 +260,10 @@ def check_unit_validity(unit: str) -> bool:
     Checks if a unit is valid.
 
     Args:
-        unit (str): The unit to check. Must be "C", "F", or "K".
+        unit: The unit to check. Must be "C", "F", or "K".
 
     Returns:
-        bool: True if the unit is valid, False otherwise.
+        True if the unit is valid, False otherwise.
     """
     if not unit in ["C", "F", "K"]:
         return False
@@ -312,12 +273,12 @@ def check_unit_validity(unit: str) -> bool:
 **Option B**
 
 ```python
-def check_unit_validity(unit: int) -> bool:
+def check_unit_validity(unit):
     """
     Checks if a unit is valid.
 
     Args:
-        unit (int): The unit to check. Must be "C", "F", or "K".
+        unit (str): The unit to check. Must be "C", "F", or "K".
 
     Returns:
         bool: True if the unit is valid, False otherwise.
@@ -348,10 +309,10 @@ def check_unit_validity(unit: str) -> bool:
 :::::::::::::::::::::::: solution 
 
 ## Solution
-Option A is the correct choice!
+Option A and B are both correct choices! 
 
-- **Option A**: The docstring is detailed and includes descriptions of the arguments and return type, making it the correct choice.
-- **Option B**: The type hint for the unit parameter is incorrect (int instead of str).
+- **Option A**: The docstring is detailed. It does not require types (str, bool) since they are already specified in the function signature.
+- **Option B**: The docstring is detailed and includes descriptions of the arguments and return type since they are not specified in the function signature.
 - **Option C**: The docstring is missing the specific valid units ("C", "F", "K") in the description of the unit parameter, making it less informative.
 
 :::::::::::::::::::::::: 
