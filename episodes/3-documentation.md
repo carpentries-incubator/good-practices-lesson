@@ -369,20 +369,23 @@ INFO    -  Writing initial docs: ./docs/index.md
 ```
 
 This command creates a new MkDocs project in the current directory with a `docs` folder containing an `index.md` file 
-and a `mkdocs.yml` configuration file in the root of our project.
+and a `mkdocs.yml` configuration file in the root of our project. If you look in the `index.md`, you can see that it currently contains default information about MkDocs.
+You can change this by writing a brief overview of the project or copying the contents of your `README.md`
 
 Now, let's fill in the `mkdocs.yml` configuration file for our project.
 
 ```yaml
-site_name: Temperature Conversion Documentation
-use_directory_urls: false
+site_name: Temperature Conversion
+
 theme:
   name: "material"
 font: false
+
 nav:
-  - Temperature Conversion Documentation: index.md
+  - Overview: index.md
 
 plugins:
+  - search
   - mkdocstrings
 ```
 
@@ -391,7 +394,7 @@ Now that we have a basic structure for our docs, we can build them!
 ```bash
 mkdocs build
 ```
-Then we can view these locally with:
+Then we can view these locally by running the following command and clicking on the generated link:
 
 ```bash
 mkdocs serve
@@ -420,16 +423,18 @@ In this file, add the name of your module:
 Now, let's add our new file to the `mkdocs.yml` configuration file: 
 
 ```yaml
-site_name: Temperature Conversion Documentation
-use_directory_urls: false
+site_name: Temperature Conversion
+
 theme:
   name: "material"
 font: false
+
 nav:
-  - Temperature Conversion Documentation: index.md
+  - Overview: index.md
   - API Documentation: api.md
 
 plugins:
+  - search
   - mkdocstrings
 ```
 
@@ -794,10 +799,12 @@ In the terminal run:
 ```bash
 mkdocs gh-deploy
 ```
-You can then go to your GitHub repository to view your documentation. 
+The output should give you some information on where the documentation can be found, click on the generated link to view the documentation! You can then also copy the link to add to the "about" section of your repository so that users can find the documentation easily. 
 :::
 
 ::: instructor
+You can show what the results of this exercise are here: https://clairedons.github.io/temperature-conversion/ and perhaps explain how to add the link to the repository. 
+
 You can show the example documentation deployed on GitHub pages here: https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/
 
 Then, you can show that this content comes from simple markdown files, like: https://github.com/esciencecenter-digital-skills/good-practices-documentation-example/blob/main/doc/another-feature.md?plain=1
