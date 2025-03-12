@@ -433,7 +433,7 @@ short-lived projects it is not always worth the investment.</li>
 </div>
 </div></section><section id="aio-2-modular-code"><p>Content from <a href="2-modular-code.html">Modular Code Development</a></p>
 <hr>
-<p>Last updated on 2025-01-20 |
+<p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/2-modular-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -558,143 +558,88 @@ functionality.</p>
   Solution 1 - Basic
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">def</span> celsius_to_fahrenheit(celsius):</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">    Converts a temperature from Celsius to Fahrenheit.</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>    <span class="cf">return</span> (celsius <span class="op">*</span> (<span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span>)) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">        celsius (float): The temperature in Celsius.</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(fahrenheit):</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>    <span class="cf">return</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">        float: The temperature in Fahrenheit.</span></span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="cf">return</span> (celsius <span class="op">*</span> (<span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span>)) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="kw">def</span> celsius_to_kelvin(celsius):</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    <span class="cf">return</span> celsius <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(fahrenheit):</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">    Converts a temperature from Fahrenheit to Celsius.</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">        fahrenheit (float): The temperature in Fahrenheit.</span></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">        float: The temperature in Celsius.</span></span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>    <span class="cf">return</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a><span class="kw">def</span> celsius_to_kelvin(celsius):</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a><span class="co">    Converts a temperature from Celsius to Kelvin.</span></span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">        celsius (float): The temperature in Celsius.</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="kw">def</span> kelvin_to_celsius(kelvin):</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    <span class="cf">return</span> kelvin <span class="op">-</span> <span class="fl">273.15</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="kw">def</span> check_temperature_validity(temperature, unit):</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    abs_zero <span class="op">=</span> {<span class="st">"C"</span>: <span class="op">-</span><span class="fl">273.15</span>, <span class="st">"F"</span>: <span class="op">-</span><span class="fl">459.67</span>, <span class="st">"K"</span>: <span class="dv">0</span>}</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    <span class="cf">if</span> temperature <span class="op">&lt;</span> abs_zero[unit]:</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="kw">def</span> check_unit_validity(unit):</span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> unit <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a><span class="kw">def</span> convert_temperature(temperature, unit):</span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a><span class="co">    Converts a temperature from one unit to another.</span></span>
 <span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co">        float: The temperature in Kelvin.</span></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>    <span class="cf">return</span> celsius <span class="op">+</span> <span class="fl">273.15</span></span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="kw">def</span> kelvin_to_celsius(kelvin):</span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="co">    Converts a temperature from Kelvin to Celsius.</span></span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="co">        kelvin (float): The temperature in Kelvin.</span></span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="co">        float: The temperature in Celsius.</span></span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a>    <span class="cf">return</span> kelvin <span class="op">-</span> <span class="fl">273.15</span></span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a><span class="kw">def</span> check_temperature_validity(temperature, unit):</span>
-<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a><span class="co">    Checks if a temperature is valid for a given unit.</span></span>
-<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a><span class="co">        temperature (float): The temperature to check.</span></span>
-<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a><span class="co">        unit (str): The unit of the temperature. Must be "C", "F", or "K".</span></span>
-<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a></span>
-<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a><span class="co">        bool: True if the temperature is valid, False otherwise.</span></span>
-<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a>    abs_zero <span class="op">=</span> {<span class="st">"C"</span>: <span class="op">-</span><span class="fl">273.15</span>, <span class="st">"F"</span>: <span class="op">-</span><span class="fl">459.67</span>, <span class="st">"K"</span>: <span class="dv">0</span>}</span>
-<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a>    <span class="cf">if</span> temperature <span class="op">&lt;</span> abs_zero[unit]:</span>
-<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="co">        temperature (float): The temperature to convert.</span></span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a><span class="co">        unit (str): The unit of the temperature. Must be "C", "F", or "K".</span></span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="co">        tuple: A tuple containing the converted temperature in Celsius and Kelvin units.</span></span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="co">    Raises:</span></span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a><span class="co">        ValueError: If the unit is not "C", "F", or "K".</span></span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="co">        ValueError: If the temperature is below absolute zero for the given unit.</span></span>
+<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a><span class="co">    Examples:</span></span>
+<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a><span class="co">        &gt;&gt;&gt; convert_temperature(32, "F")</span></span>
+<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="co">        (0.0, 273.15)</span></span>
+<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="co">        &gt;&gt;&gt; convert_temperature(0, "C")</span></span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="co">        (32.0, 273.15)</span></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a><span class="co">        &gt;&gt;&gt; convert_temperature(273.15, "K")</span></span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a><span class="co">        (0.0, -459.67)</span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> check_unit_validity(unit):</span>
+<span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid unit"</span>)</span>
+<span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> check_temperature_validity(temperature, unit):</span>
+<span id="cb2-56"><a href="#cb2-56" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid temperature"</span>)</span>
+<span id="cb2-57"><a href="#cb2-57" tabindex="-1"></a>    <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"F"</span>:</span>
+<span id="cb2-58"><a href="#cb2-58" tabindex="-1"></a>        celsius <span class="op">=</span> fahrenheit_to_celsius(temperature)</span>
+<span id="cb2-59"><a href="#cb2-59" tabindex="-1"></a>        kelvin <span class="op">=</span> celsius_to_kelvin(celsius)</span>
+<span id="cb2-60"><a href="#cb2-60" tabindex="-1"></a>        <span class="cf">return</span> celsius, kelvin</span>
+<span id="cb2-61"><a href="#cb2-61" tabindex="-1"></a>    <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"C"</span>:</span>
+<span id="cb2-62"><a href="#cb2-62" tabindex="-1"></a>        fahrenheit <span class="op">=</span> celsius_to_fahrenheit(temperature)</span>
+<span id="cb2-63"><a href="#cb2-63" tabindex="-1"></a>        kelvin <span class="op">=</span> celsius_to_kelvin(temperature)</span>
+<span id="cb2-64"><a href="#cb2-64" tabindex="-1"></a>        <span class="cf">return</span> fahrenheit, kelvin</span>
+<span id="cb2-65"><a href="#cb2-65" tabindex="-1"></a>    <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"K"</span>:</span>
+<span id="cb2-66"><a href="#cb2-66" tabindex="-1"></a>        celsius <span class="op">=</span> kelvin_to_celsius(temperature)</span>
+<span id="cb2-67"><a href="#cb2-67" tabindex="-1"></a>        fahrenheit <span class="op">=</span> celsius_to_fahrenheit(celsius)</span>
+<span id="cb2-68"><a href="#cb2-68" tabindex="-1"></a>        <span class="cf">return</span> celsius, fahrenheit</span>
 <span id="cb2-69"><a href="#cb2-69" tabindex="-1"></a></span>
-<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a><span class="kw">def</span> check_unit_validity(unit):</span>
-<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a><span class="co">    Checks if a unit is valid.</span></span>
-<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a></span>
-<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a><span class="co">        unit (str): The unit to check. Must be "C", "F", or "K".</span></span>
-<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a></span>
-<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb2-78"><a href="#cb2-78" tabindex="-1"></a><span class="co">        bool: True if the unit is valid, False otherwise.</span></span>
-<span id="cb2-79"><a href="#cb2-79" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-80"><a href="#cb2-80" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> unit <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
-<span id="cb2-81"><a href="#cb2-81" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb2-82"><a href="#cb2-82" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb2-83"><a href="#cb2-83" tabindex="-1"></a></span>
-<span id="cb2-84"><a href="#cb2-84" tabindex="-1"></a></span>
-<span id="cb2-85"><a href="#cb2-85" tabindex="-1"></a><span class="kw">def</span> convert_temperature(temperature, unit):</span>
-<span id="cb2-86"><a href="#cb2-86" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb2-87"><a href="#cb2-87" tabindex="-1"></a><span class="co">    Converts a temperature from one unit to another.</span></span>
-<span id="cb2-88"><a href="#cb2-88" tabindex="-1"></a></span>
-<span id="cb2-89"><a href="#cb2-89" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb2-90"><a href="#cb2-90" tabindex="-1"></a><span class="co">        temperature (float): The temperature to convert.</span></span>
-<span id="cb2-91"><a href="#cb2-91" tabindex="-1"></a><span class="co">        unit (str): The unit of the temperature. Must be "C", "F", or "K".</span></span>
-<span id="cb2-92"><a href="#cb2-92" tabindex="-1"></a></span>
-<span id="cb2-93"><a href="#cb2-93" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb2-94"><a href="#cb2-94" tabindex="-1"></a><span class="co">        tuple: A tuple containing the converted temperature in Celsius and Kelvin units.</span></span>
-<span id="cb2-95"><a href="#cb2-95" tabindex="-1"></a></span>
-<span id="cb2-96"><a href="#cb2-96" tabindex="-1"></a><span class="co">    Raises:</span></span>
-<span id="cb2-97"><a href="#cb2-97" tabindex="-1"></a><span class="co">        ValueError: If the unit is not "C", "F", or "K".</span></span>
-<span id="cb2-98"><a href="#cb2-98" tabindex="-1"></a><span class="co">        ValueError: If the temperature is below absolute zero for the given unit.</span></span>
-<span id="cb2-99"><a href="#cb2-99" tabindex="-1"></a></span>
-<span id="cb2-100"><a href="#cb2-100" tabindex="-1"></a><span class="co">    Examples:</span></span>
-<span id="cb2-101"><a href="#cb2-101" tabindex="-1"></a><span class="co">        &gt;&gt;&gt; convert_temperature(32, "F")</span></span>
-<span id="cb2-102"><a href="#cb2-102" tabindex="-1"></a><span class="co">        (0.0, 273.15)</span></span>
-<span id="cb2-103"><a href="#cb2-103" tabindex="-1"></a><span class="co">        &gt;&gt;&gt; convert_temperature(0, "C")</span></span>
-<span id="cb2-104"><a href="#cb2-104" tabindex="-1"></a><span class="co">        (32.0, 273.15)</span></span>
-<span id="cb2-105"><a href="#cb2-105" tabindex="-1"></a><span class="co">        &gt;&gt;&gt; convert_temperature(273.15, "K")</span></span>
-<span id="cb2-106"><a href="#cb2-106" tabindex="-1"></a><span class="co">        (0.0, -459.67)</span></span>
-<span id="cb2-107"><a href="#cb2-107" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb2-108"><a href="#cb2-108" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> check_unit_validity(unit):</span>
-<span id="cb2-109"><a href="#cb2-109" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid unit"</span>)</span>
-<span id="cb2-110"><a href="#cb2-110" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> check_temperature_validity(temperature, unit):</span>
-<span id="cb2-111"><a href="#cb2-111" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid temperature"</span>)</span>
-<span id="cb2-112"><a href="#cb2-112" tabindex="-1"></a>    <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"F"</span>:</span>
-<span id="cb2-113"><a href="#cb2-113" tabindex="-1"></a>        celsius <span class="op">=</span> fahrenheit_to_celsius(temperature)</span>
-<span id="cb2-114"><a href="#cb2-114" tabindex="-1"></a>        kelvin <span class="op">=</span> celsius_to_kelvin(celsius)</span>
-<span id="cb2-115"><a href="#cb2-115" tabindex="-1"></a>        <span class="cf">return</span> celsius, kelvin</span>
-<span id="cb2-116"><a href="#cb2-116" tabindex="-1"></a>    <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"C"</span>:</span>
-<span id="cb2-117"><a href="#cb2-117" tabindex="-1"></a>        fahrenheit <span class="op">=</span> celsius_to_fahrenheit(temperature)</span>
-<span id="cb2-118"><a href="#cb2-118" tabindex="-1"></a>        kelvin <span class="op">=</span> celsius_to_kelvin(temperature)</span>
-<span id="cb2-119"><a href="#cb2-119" tabindex="-1"></a>        <span class="cf">return</span> fahrenheit, kelvin</span>
-<span id="cb2-120"><a href="#cb2-120" tabindex="-1"></a>    <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"K"</span>:</span>
-<span id="cb2-121"><a href="#cb2-121" tabindex="-1"></a>        celsius <span class="op">=</span> kelvin_to_celsius(temperature)</span>
-<span id="cb2-122"><a href="#cb2-122" tabindex="-1"></a>        fahrenheit <span class="op">=</span> celsius_to_fahrenheit(celsius)</span>
-<span id="cb2-123"><a href="#cb2-123" tabindex="-1"></a>        <span class="cf">return</span> celsius, fahrenheit</span>
-<span id="cb2-124"><a href="#cb2-124" tabindex="-1"></a></span>
-<span id="cb2-125"><a href="#cb2-125" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb2-126"><a href="#cb2-126" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="dv">0</span>, <span class="st">"C"</span>))</span>
-<span id="cb2-127"><a href="#cb2-127" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="dv">0</span>, <span class="st">"F"</span>))</span>
-<span id="cb2-128"><a href="#cb2-128" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="dv">0</span>, <span class="st">"K"</span>))</span>
-<span id="cb2-129"><a href="#cb2-129" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"K"</span>))</span>
-<span id="cb2-130"><a href="#cb2-130" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"C"</span>))</span>
-<span id="cb2-131"><a href="#cb2-131" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"F"</span>))</span>
-<span id="cb2-132"><a href="#cb2-132" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"B"</span>))</span></code></pre>
+<span id="cb2-70"><a href="#cb2-70" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb2-71"><a href="#cb2-71" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="dv">0</span>, <span class="st">"C"</span>))</span>
+<span id="cb2-72"><a href="#cb2-72" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="dv">0</span>, <span class="st">"F"</span>))</span>
+<span id="cb2-73"><a href="#cb2-73" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="dv">0</span>, <span class="st">"K"</span>))</span>
+<span id="cb2-74"><a href="#cb2-74" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"K"</span>))</span>
+<span id="cb2-75"><a href="#cb2-75" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"C"</span>))</span>
+<span id="cb2-76"><a href="#cb2-76" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"F"</span>))</span>
+<span id="cb2-77"><a href="#cb2-77" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"B"</span>))</span></code></pre>
 </div>
 </div>
 </div>
@@ -707,7 +652,7 @@ functionality.</p>
   Solution 2 - Advanced
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -724,119 +669,54 @@ functionality.</p>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>        <span class="va">self</span>.abs_zero <span class="op">=</span> {<span class="st">"C"</span>: <span class="op">-</span><span class="fl">273.15</span>, <span class="st">"F"</span>: <span class="op">-</span><span class="fl">459.67</span>, <span class="st">"K"</span>: <span class="dv">0</span>}</span>
 <span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a></span>
 <span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>    <span class="kw">def</span> celsius_to_fahrenheit(<span class="va">self</span>, celsius):</span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">        Converts a temperature from Celsius to Fahrenheit.</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">            celsius (float): The temperature in Celsius.</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">        Returns:</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">            float: The temperature in Fahrenheit.</span></span>
-<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>        <span class="cf">return</span> (celsius <span class="op">*</span> (<span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span>)) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>        <span class="cf">return</span> (celsius <span class="op">*</span> (<span class="dv">9</span> <span class="op">/</span> <span class="dv">5</span>)) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>    <span class="kw">def</span> fahrenheit_to_celsius(<span class="va">self</span>, fahrenheit):</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>        <span class="cf">return</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>    <span class="kw">def</span> celsius_to_kelvin(<span class="va">self</span>, celsius):</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>        <span class="cf">return</span> celsius <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>    <span class="kw">def</span> kelvin_to_celsius(<span class="va">self</span>, kelvin):</span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>        <span class="cf">return</span> kelvin <span class="op">-</span> <span class="fl">273.15</span></span>
 <span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>    <span class="kw">def</span> fahrenheit_to_celsius(<span class="va">self</span>, fahrenheit):</span>
-<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">        Converts a temperature from Fahrenheit to Celsius.</span></span>
-<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">            fahrenheit (float): The temperature in Fahrenheit.</span></span>
-<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a></span>
-<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="co">        Returns:</span></span>
-<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">            float: The temperature in Celsius.</span></span>
-<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a>        <span class="cf">return</span> (fahrenheit <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span>)</span>
-<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a></span>
-<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a>    <span class="kw">def</span> celsius_to_kelvin(<span class="va">self</span>, celsius):</span>
-<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a><span class="co">        Converts a temperature from Celsius to Kelvin.</span></span>
-<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a></span>
-<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a><span class="co">            celsius (float): The temperature in Celsius.</span></span>
-<span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a></span>
-<span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a><span class="co">        Returns:</span></span>
-<span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a><span class="co">            float: The temperature in Kelvin.</span></span>
-<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a>        <span class="cf">return</span> celsius <span class="op">+</span> <span class="fl">273.15</span></span>
-<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a></span>
-<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a>    <span class="kw">def</span> kelvin_to_celsius(<span class="va">self</span>, kelvin):</span>
-<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a><span class="co">        Converts a temperature from Kelvin to Celsius.</span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>    <span class="kw">def</span> check_temperature_validity(<span class="va">self</span>, temperature, unit):</span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a>        <span class="cf">if</span> temperature <span class="op">&lt;</span> <span class="va">self</span>.abs_zero[unit]:</span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a>    <span class="kw">def</span> check_unit_validity(<span class="va">self</span>, unit):</span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a>        <span class="cf">if</span> unit <span class="kw">not</span> <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a>    <span class="kw">def</span> convert_temperature(<span class="va">self</span>, temperature, unit):</span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.check_unit_validity(unit):</span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid unit"</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.check_temperature_validity(temperature, unit):</span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid temperature"</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a>        <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"F"</span>:</span>
+<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a>            celsius <span class="op">=</span> <span class="va">self</span>.fahrenheit_to_celsius(temperature)</span>
+<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a>            kelvin <span class="op">=</span> <span class="va">self</span>.celsius_to_kelvin(celsius)</span>
+<span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a>            <span class="cf">return</span> celsius, kelvin</span>
+<span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a>        <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"C"</span>:</span>
+<span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a>            fahrenheit <span class="op">=</span> <span class="va">self</span>.celsius_to_fahrenheit(temperature)</span>
+<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a>            kelvin <span class="op">=</span> <span class="va">self</span>.celsius_to_kelvin(temperature)</span>
+<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a>            <span class="cf">return</span> fahrenheit, kelvin</span>
+<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a>        <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"K"</span>:</span>
+<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a>            celsius <span class="op">=</span> <span class="va">self</span>.kelvin_to_celsius(temperature)</span>
+<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a>            fahrenheit <span class="op">=</span> <span class="va">self</span>.celsius_to_fahrenheit(celsius)</span>
+<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a>            <span class="cf">return</span> celsius, fahrenheit</span>
 <span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a></span>
-<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a><span class="co">            kelvin (float): The temperature in Kelvin.</span></span>
-<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a></span>
-<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a><span class="co">        Returns:</span></span>
-<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a><span class="co">            float: The temperature in Celsius.</span></span>
-<span id="cb3-57"><a href="#cb3-57" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-58"><a href="#cb3-58" tabindex="-1"></a>        <span class="cf">return</span> kelvin <span class="op">-</span> <span class="fl">273.15</span></span>
-<span id="cb3-59"><a href="#cb3-59" tabindex="-1"></a></span>
-<span id="cb3-60"><a href="#cb3-60" tabindex="-1"></a>    <span class="kw">def</span> check_temperature_validity(<span class="va">self</span>, temperature, unit):</span>
-<span id="cb3-61"><a href="#cb3-61" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-62"><a href="#cb3-62" tabindex="-1"></a><span class="co">        Checks if a given temperature is valid for a given unit.</span></span>
-<span id="cb3-63"><a href="#cb3-63" tabindex="-1"></a></span>
-<span id="cb3-64"><a href="#cb3-64" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb3-65"><a href="#cb3-65" tabindex="-1"></a><span class="co">            temperature (float): The temperature to check.</span></span>
-<span id="cb3-66"><a href="#cb3-66" tabindex="-1"></a><span class="co">            unit (str): The unit to check the temperature against.</span></span>
-<span id="cb3-67"><a href="#cb3-67" tabindex="-1"></a></span>
-<span id="cb3-68"><a href="#cb3-68" tabindex="-1"></a><span class="co">        Returns:</span></span>
-<span id="cb3-69"><a href="#cb3-69" tabindex="-1"></a><span class="co">            bool: True if the temperature is valid for the unit, False otherwise.</span></span>
-<span id="cb3-70"><a href="#cb3-70" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-71"><a href="#cb3-71" tabindex="-1"></a>        <span class="cf">if</span> temperature <span class="op">&lt;</span> <span class="va">self</span>.abs_zero[unit]:</span>
-<span id="cb3-72"><a href="#cb3-72" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb3-73"><a href="#cb3-73" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb3-74"><a href="#cb3-74" tabindex="-1"></a></span>
-<span id="cb3-75"><a href="#cb3-75" tabindex="-1"></a>    <span class="kw">def</span> check_unit_validity(<span class="va">self</span>, unit):</span>
-<span id="cb3-76"><a href="#cb3-76" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-77"><a href="#cb3-77" tabindex="-1"></a><span class="co">        Checks if a given unit is valid.</span></span>
-<span id="cb3-78"><a href="#cb3-78" tabindex="-1"></a></span>
-<span id="cb3-79"><a href="#cb3-79" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb3-80"><a href="#cb3-80" tabindex="-1"></a><span class="co">            unit (str): The unit to check.</span></span>
-<span id="cb3-81"><a href="#cb3-81" tabindex="-1"></a></span>
-<span id="cb3-82"><a href="#cb3-82" tabindex="-1"></a><span class="co">        Returns:</span></span>
-<span id="cb3-83"><a href="#cb3-83" tabindex="-1"></a><span class="co">            bool: True if the unit is valid, False otherwise.</span></span>
-<span id="cb3-84"><a href="#cb3-84" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-85"><a href="#cb3-85" tabindex="-1"></a>        <span class="cf">if</span> unit <span class="kw">not</span> <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
-<span id="cb3-86"><a href="#cb3-86" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb3-87"><a href="#cb3-87" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb3-88"><a href="#cb3-88" tabindex="-1"></a></span>
-<span id="cb3-89"><a href="#cb3-89" tabindex="-1"></a>    <span class="kw">def</span> convert_temperature(<span class="va">self</span>, temperature, unit):</span>
-<span id="cb3-90"><a href="#cb3-90" tabindex="-1"></a>        <span class="co">"""</span></span>
-<span id="cb3-91"><a href="#cb3-91" tabindex="-1"></a><span class="co">        Converts a temperature from one unit to another.</span></span>
-<span id="cb3-92"><a href="#cb3-92" tabindex="-1"></a></span>
-<span id="cb3-93"><a href="#cb3-93" tabindex="-1"></a><span class="co">        Args:</span></span>
-<span id="cb3-94"><a href="#cb3-94" tabindex="-1"></a><span class="co">            temperature (float): The temperature to convert.</span></span>
-<span id="cb3-95"><a href="#cb3-95" tabindex="-1"></a><span class="co">            unit (str): The unit of the temperature.</span></span>
-<span id="cb3-96"><a href="#cb3-96" tabindex="-1"></a></span>
-<span id="cb3-97"><a href="#cb3-97" tabindex="-1"></a><span class="co">        Returns:</span></span>
-<span id="cb3-98"><a href="#cb3-98" tabindex="-1"></a><span class="co">            tuple: A tuple containing the converted temperature in the other two units.</span></span>
-<span id="cb3-99"><a href="#cb3-99" tabindex="-1"></a><span class="co">        """</span></span>
-<span id="cb3-100"><a href="#cb3-100" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.check_unit_validity(unit):</span>
-<span id="cb3-101"><a href="#cb3-101" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid unit"</span>)</span>
-<span id="cb3-102"><a href="#cb3-102" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.check_temperature_validity(temperature, unit):</span>
-<span id="cb3-103"><a href="#cb3-103" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Invalid temperature"</span>)</span>
-<span id="cb3-104"><a href="#cb3-104" tabindex="-1"></a>        <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"F"</span>:</span>
-<span id="cb3-105"><a href="#cb3-105" tabindex="-1"></a>            celsius <span class="op">=</span> <span class="va">self</span>.fahrenheit_to_celsius(temperature)</span>
-<span id="cb3-106"><a href="#cb3-106" tabindex="-1"></a>            kelvin <span class="op">=</span> <span class="va">self</span>.celsius_to_kelvin(celsius)</span>
-<span id="cb3-107"><a href="#cb3-107" tabindex="-1"></a>            <span class="cf">return</span> celsius, kelvin</span>
-<span id="cb3-108"><a href="#cb3-108" tabindex="-1"></a>        <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"C"</span>:</span>
-<span id="cb3-109"><a href="#cb3-109" tabindex="-1"></a>            fahrenheit <span class="op">=</span> <span class="va">self</span>.celsius_to_fahrenheit(temperature)</span>
-<span id="cb3-110"><a href="#cb3-110" tabindex="-1"></a>            kelvin <span class="op">=</span> <span class="va">self</span>.celsius_to_kelvin(temperature)</span>
-<span id="cb3-111"><a href="#cb3-111" tabindex="-1"></a>            <span class="cf">return</span> fahrenheit, kelvin</span>
-<span id="cb3-112"><a href="#cb3-112" tabindex="-1"></a>        <span class="cf">if</span> unit <span class="op">==</span> <span class="st">"K"</span>:</span>
-<span id="cb3-113"><a href="#cb3-113" tabindex="-1"></a>            celsius <span class="op">=</span> <span class="va">self</span>.kelvin_to_celsius(temperature)</span>
-<span id="cb3-114"><a href="#cb3-114" tabindex="-1"></a>            fahrenheit <span class="op">=</span> <span class="va">self</span>.celsius_to_fahrenheit(celsius)</span>
-<span id="cb3-115"><a href="#cb3-115" tabindex="-1"></a>            <span class="cf">return</span> celsius, fahrenheit</span>
-<span id="cb3-116"><a href="#cb3-116" tabindex="-1"></a></span>
-<span id="cb3-117"><a href="#cb3-117" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
-<span id="cb3-118"><a href="#cb3-118" tabindex="-1"></a>    converter <span class="op">=</span> TemperatureConverter()</span>
-<span id="cb3-119"><a href="#cb3-119" tabindex="-1"></a>    <span class="bu">print</span>(converter.convert_temperature(<span class="dv">0</span>, <span class="st">"C"</span>))</span>
-<span id="cb3-120"><a href="#cb3-120" tabindex="-1"></a>    <span class="bu">print</span>(converter.convert_temperature(<span class="dv">0</span>, <span class="st">"F"</span>))</span>
-<span id="cb3-121"><a href="#cb3-121" tabindex="-1"></a>    <span class="bu">print</span>(converter.convert_temperature(<span class="dv">0</span>, <span class="st">"K"</span>))</span>
-<span id="cb3-122"><a href="#cb3-122" tabindex="-1"></a>    <span class="bu">print</span>(converter.convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"K"</span>))</span>
-<span id="cb3-123"><a href="#cb3-123" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"C"</span>))</span>
-<span id="cb3-124"><a href="#cb3-124" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"F"</span>))</span>
-<span id="cb3-125"><a href="#cb3-125" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="dv">0</span>, <span class="st">"X"</span>))</span></code></pre>
+<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a>    converter <span class="op">=</span> TemperatureConverter()</span>
+<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a>    <span class="bu">print</span>(converter.convert_temperature(<span class="dv">0</span>, <span class="st">"C"</span>))</span>
+<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a>    <span class="bu">print</span>(converter.convert_temperature(<span class="dv">0</span>, <span class="st">"F"</span>))</span>
+<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a>    <span class="bu">print</span>(converter.convert_temperature(<span class="dv">0</span>, <span class="st">"K"</span>))</span>
+<span id="cb3-57"><a href="#cb3-57" tabindex="-1"></a>    <span class="bu">print</span>(converter.convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"K"</span>))</span>
+<span id="cb3-58"><a href="#cb3-58" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"C"</span>))</span>
+<span id="cb3-59"><a href="#cb3-59" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="op">-</span><span class="dv">500</span>, <span class="st">"F"</span>))</span>
+<span id="cb3-60"><a href="#cb3-60" tabindex="-1"></a>    <span class="bu">print</span>(convert_temperature(<span class="dv">0</span>, <span class="st">"X"</span>))</span></code></pre>
 </div>
 </div>
 </div>
@@ -868,7 +748,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-3-documentation"><p>Content from <a href="3-documentation.html">Document your research software</a></p>
 <hr>
-<p>Last updated on 2025-03-11 |
+<p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/3-documentation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -946,7 +826,7 @@ collaborate on, or papers you had to reproduce.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>It is important to document code</li>
@@ -968,7 +848,7 @@ thought out README file is enough.</li>
 <p>There are different types of documentation:</p>
 <ul>
 <li>README and CITATION files</li>
-<li>in-code documentation (Docstrings)</li>
+<li>in-code documentation (comments and docstrings)</li>
 <li>Tutorials</li>
 </ul></section><section><h2 class="section-heading" id="writing-good-readme-files">Writing good README files<a class="anchor" aria-label="anchor" href="#writing-good-readme-files"></a>
 </h2>
@@ -1099,10 +979,10 @@ GitHub. What has happened?</li>
 </section><section><h2 class="section-heading" id="in-code-documentation">In-code documentation<a class="anchor" aria-label="anchor" href="#in-code-documentation"></a>
 </h2>
 <hr class="half-width">
-<p>Documentation strings: - Makes code more understandable - Explains
-decisions we made</p>
+<p>In-code documentation makes code more understandable and explains
+decisions we made.</p>
 <div class="section level3">
-<h3 id="when-not-to-use-in-code-documentation">When not to use in-code documentation:<a class="anchor" aria-label="anchor" href="#when-not-to-use-in-code-documentation"></a>
+<h3 id="when-not-to-use">When not to use:<a class="anchor" aria-label="anchor" href="#when-not-to-use"></a>
 </h3>
 <ul>
 <li>When the code is self-explanatory</li>
@@ -1128,15 +1008,14 @@ decisions we made</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> celsius_to_fahrenheit(degrees):</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    <span class="cf">return</span> degrees <span class="op">*</span> <span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span> <span class="op">+</span> <span class="dv">32</span></span></code></pre>
 </div>
-<div id="writing-good-comments---in-code-1-comments" class="callout challenge">
+<div id="exercise-writing-good-in-code-comments" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="writing-good-comments---in-code-1-comments" class="callout-inner">
-<h3 class="callout-title">Writing good comments - In-code-1: Comments</h3>
+<div id="exercise-writing-good-in-code-comments" class="callout-inner">
+<h3 class="callout-title">Exercise: Writing good in-code comments</h3>
 <div class="callout-content">
-<p>Let’s take a look at two example comments (comments in Python start
-with <code>#</code>):</p>
+<p>Let’s take a look at two example comments:</p>
 <p><strong>Comment A</strong></p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1163,8 +1042,9 @@ why?</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
+<p>Comment B is the correct choice!</p>
 <ul>
 <li>
 <strong>Comment A</strong> describes <strong>what</strong> happens
@@ -1184,8 +1064,10 @@ redundant commentary.</li>
 <div class="section level3">
 <h3 id="what-are-docstrings-and-how-can-they-be-useful">What are “docstrings” and how can they be useful?<a class="anchor" aria-label="anchor" href="#what-are-docstrings-and-how-can-they-be-useful"></a>
 </h3>
-<p>Here is function <code>fahrenheit_to_celsius</code> which converts
-temperature in Fahrenheit to Celsius.</p>
+<p>Docstrings are a special kind of comment that are used to document
+functions, classes and modules. Here is function
+<code>fahrenheit_to_celsius</code> which converts temperature in
+Fahrenheit to Celsius.</p>
 <p>The first set of examples uses <strong>regular comments</strong>:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1198,47 +1080,135 @@ temperature in Fahrenheit to Celsius.</p>
 <p>The second set uses <strong>docstrings or similar concepts</strong>.
 Please compare the two (above and below):</p>
 <div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">PY<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode py" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(temp_f: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(temp_f: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">    Converts a temperature in Fahrenheit to Celsius.</span></span>
 <span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">    temp_f : float</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">        The temperature in Fahrenheit.</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">    float</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">        The temperature in Celsius.</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    temp_c <span class="op">=</span> (temp_f <span class="op">-</span> <span class="fl">32.0</span>) <span class="op">*</span> (<span class="fl">5.0</span><span class="op">/</span><span class="fl">9.0</span>)</span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>    <span class="cf">return</span> temp_c</span></code></pre>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">        temp_f: The temperature in Fahrenheit.</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">        The temperature in Celsius.</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>    temp_c <span class="op">=</span> (temp_f <span class="op">-</span> <span class="fl">32.0</span>) <span class="op">*</span> (<span class="fl">5.0</span><span class="op">/</span><span class="fl">9.0</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>    <span class="cf">return</span> temp_c</span></code></pre>
 </div>
+<p>Unlike regular comments, docstrings are stored as an attribute
+(<code>__doc__</code>) of the object they document and can be extracted
+programmatically.</p>
 <p>Docstrings are more powerful than comments:</p>
 <ul>
-<li>Docstrings are automatically extracted when calling the help
-function.</li>
-<li>Tools can generate documentation pages automatically from docstrings
-known as API documentation.</li>
+<li>Docstrings are automatically extracted when calling the
+<code>help</code> function.</li>
+<li>Tools (e.g. <code>mkdocs</code>, <code>sphinx</code>) can generate
+documentation pages automatically from docstrings known as API
+documentation.</li>
 </ul>
-<p>It is common to write docstrings for functions, classes, and
-modules.</p>
-<p>TODO: Introduce how to write docstrings and show an example of API
-documentation. Good docstrings describe: - What the function does - What
-goes in (including the type of the input variables) - What goes out
-(including the return type)</p>
-<p><strong>Naming is documentation</strong>: Giving explicit,
-descriptive names to your code segments (functions, classes, variables)
-already provides very useful and important documentation. In practice
-you will find that for simple functions it is unnecessary to add a
-docstring when the function name and variable names already give enough
-information.</p>
-<p>TODO: Add docstring exercise. Idea add docstrings to convertion
-function and improve naming.</p>
+<p>A good docstring should describe:</p>
+<ul>
+<li>What the function does</li>
+<li>What goes in (including the type of the input variables)</li>
+<li>What goes out (including the return type)</li>
+</ul>
+<p>There are different docstrings styles, such as Google style, numpy
+style and reStructered style, with Google style being the most common.
+See documentation <a href="https://google.github.io/styleguide/pyguide.html#doc-function-args" class="external-link">here</a>
+for more information.</p>
+<div id="exercise-identify-a-proper-docstring" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="exercise-identify-a-proper-docstring" class="callout-inner">
+<h3 class="callout-title">Exercise: Identify a proper docstring</h3>
+<div class="callout-content">
+<p>Which of the following options is the correct function with a proper
+docstring?</p>
+<p><strong>Option A</strong></p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> check_unit_validity(unit: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">    Checks if a unit is valid.</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">        unit: The unit to check. Must be "C", "F", or "K".</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">        True if the unit is valid, False otherwise.</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> unit <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre>
+</div>
+<p><strong>Option B</strong></p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> check_unit_validity(unit):</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">    Checks if a unit is valid.</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">        unit (str): The unit to check. Must be "C", "F", or "K".</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">        bool: True if the unit is valid, False otherwise.</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> unit <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre>
+</div>
+<p><strong>Option C</strong></p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span> check_unit_validity(unit: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">    Validates the unit.</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">        unit (str): The unit to check.</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">        bool: True if the unit is valid, False otherwise.</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> unit <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>Option A and B are both correct choices!</p>
+<ul>
+<li>
+<strong>Option A</strong>: The docstring is detailed. It does not
+require types (str, bool) since they are already specified in the
+function signature.</li>
+<li>
+<strong>Option B</strong>: The docstring is detailed and includes
+descriptions of the arguments and return type since they are not
+specified in the function signature.</li>
+<li>
+<strong>Option C</strong>: The docstring is missing the specific
+valid units (“C”, “F”, “K”) in the description of the unit parameter,
+making it less informative.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="tools-for-generating-and-deploying-documentation">Tools for generating and deploying documentation<a class="anchor" aria-label="anchor" href="#tools-for-generating-and-deploying-documentation"></a>
 </h2>
@@ -1266,7 +1236,7 @@ Markdown.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Sphinx quickstart demo and optional exercises </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Create a directory for the example documentation, step into it, and
 inside generate the basic documentation template:</p>
@@ -1328,28 +1298,28 @@ build scripts that wrap the sphinx commands, but we will be doing it
 explicitly.</p>
 <p>Let’s have a look at the <code>index.rst</code> file, which is the
 main file of your documentation:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">RST<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">.. myproject documentation master file, created by</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="dt">   </span><span class="co">sphinx-quickstart on Sat Sep 23 17:35:26 2023.</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="dt">   </span><span class="co">You can adapt this file completely to your liking, but it should at least</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="dt">   </span><span class="co">contain the root `toctree` directive.</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>Welcome to myproject's documentation!</span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>=====================================</span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>Indices and tables</span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>==================</span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`genindex`</span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`modindex`</span></span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`search`</span></span></code></pre>
+<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">.. myproject documentation master file, created by</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="dt">   </span><span class="co">sphinx-quickstart on Sat Sep 23 17:35:26 2023.</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="dt">   </span><span class="co">You can adapt this file completely to your liking, but it should at least</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="dt">   </span><span class="co">contain the root `toctree` directive.</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>Welcome to myproject's documentation!</span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>=====================================</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a>Indices and tables</span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>==================</span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`genindex`</span></span>
+<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`modindex`</span></span>
+<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`search`</span></span></code></pre>
 </div>
 <ul>
 <li>We will not use the <code>Indices and tables</code> section now, so
@@ -1359,50 +1329,50 @@ comment.</li>
 <li>The next lines are the table of contents. We can add content
 below:</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">RST<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>   some-feature.md</span></code></pre>
+<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>   some-feature.md</span></code></pre>
 </div>
 <p>Note that <code>some-feature.md</code> needs to be indented to align
 with <code>:caption:</code>.</p>
 <p>We now need to tell Sphinx to use markdown files. To do this, we open
 <code>conf.py</code> and replace the line:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>extensions <span class="op">=</span> []</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>extensions <span class="op">=</span> []</span></code></pre>
 </div>
 <p>with this line so that Sphinx can parse Markdown files:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>]</span></code></pre>
 </div>
 <p>Let’s create the file <code>some-feature.md</code> (in Markdown
 format) which we have just listed in <code>index.rst</code> (which uses
 reStructured Text format).</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">MD<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu"># Some feature</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="fu">## Subsection</span></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>Exciting documentation in here.</span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>Let's make a list (empty surrounding lines required):</span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="ss">- </span>item 1</span>
-<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="ss">  - </span>nested item 1</span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="ss">  - </span>nested item 2</span>
-<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a></span>
-<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="ss">- </span>item 2</span>
-<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="ss">- </span>item 3</span></code></pre>
+<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu"># Some feature</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="fu">## Subsection</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>Exciting documentation in here.</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>Let's make a list (empty surrounding lines required):</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="ss">- </span>item 1</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a><span class="ss">  - </span>nested item 1</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="ss">  - </span>nested item 2</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="ss">- </span>item 2</span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a><span class="ss">- </span>item 3</span></code></pre>
 </div>
 <p>We now build the site:</p>
 <pre class="console"><code>$ ls -1
@@ -1481,77 +1451,77 @@ Typography</a> page as help.</li>
 <li><p>*Emphasized text* and **bold text**</p></li>
 <li><p>Headings:</p></li>
 </ul>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">MD<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu"># Level 1</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="fu">## Level 2</span></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="fu">### Level 3</span></span>
-<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="fu">#### Level 4</span></span></code></pre>
+<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu"># Level 1</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="fu">## Level 2</span></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="fu">### Level 3</span></span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a><span class="fu">#### Level 4</span></span></code></pre>
 </div>
 <ul>
 <li><p>An image: <code>![alt text](image.png)</code></p></li>
 <li><p><code>[A link](https://www.example.org)</code></p></li>
 <li><p>Numbered lists (numbers adjusted automatically):</p></li>
 </ul>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">MD<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ss">1. </span>item 1</span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="ss">2. </span>item 2</span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="ss">3. </span>item 3</span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="ss">1. </span>item 4</span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="ss">1. </span>item 5</span></code></pre>
+<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ss">1. </span>item 1</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ss">2. </span>item 2</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="ss">3. </span>item 3</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="ss">1. </span>item 4</span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="ss">1. </span>item 5</span></code></pre>
 </div>
 <ul>
 <li>Simple tables:</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">MD<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="pp">|</span> No.  <span class="pp">|</span>  Prime <span class="pp">|</span></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="pp">| ----</span> <span class="pp">| ------</span> <span class="pp">|</span></span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="pp">|</span> 1    <span class="pp">|</span>  No    <span class="pp">|</span></span>
-<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a><span class="pp">|</span> 2    <span class="pp">|</span>  Yes   <span class="pp">|</span></span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a><span class="pp">|</span> 3    <span class="pp">|</span>  Yes   <span class="pp">|</span></span>
-<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a><span class="pp">|</span> 4    <span class="pp">|</span>  No    <span class="pp">|</span></span></code></pre>
+<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="pp">|</span> No.  <span class="pp">|</span>  Prime <span class="pp">|</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="pp">| ----</span> <span class="pp">| ------</span> <span class="pp">|</span></span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a><span class="pp">|</span> 1    <span class="pp">|</span>  No    <span class="pp">|</span></span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a><span class="pp">|</span> 2    <span class="pp">|</span>  Yes   <span class="pp">|</span></span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a><span class="pp">|</span> 3    <span class="pp">|</span>  Yes   <span class="pp">|</span></span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a><span class="pp">|</span> 4    <span class="pp">|</span>  No    <span class="pp">|</span></span></code></pre>
 </div>
 <ul>
 <li>Code blocks:</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="an">The following is a Python code block:</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>  <span class="kw">def</span> hello():</span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Hello world"</span>)</span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>And this is a C code block:</span>
-<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a><span class="in">```c</span></span>
-<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
-<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello, World!"</span><span class="op">);</span></span>
-<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a><span class="in">```</span></span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="an">The following is a Python code block:</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>  <span class="kw">def</span> hello():</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Hello world"</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>And this is a C code block:</span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a><span class="in">```c</span></span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello, World!"</span><span class="op">);</span></span>
+<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
 <ul>
 <li>You could include an external file (here we assume a file called
 “example.py” exists; at the same time we highlight lines 2 and 3):</li>
 </ul>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="in">```{literalinclude} example.py</span></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="in">:language: python</span></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="in">:emphasize-lines: 2-3</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="in">```</span></span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="in">```{literalinclude} example.py</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="in">:language: python</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="in">:emphasize-lines: 2-3</span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
 <ul>
 <li>We can also use Jupyter notebooks (*.ipynb) with Sphinx. It requires
@@ -1571,21 +1541,21 @@ be installed.</li>
 <p>Math equations should work out of the box. In some older versions,
 you might need to edit <code>conf.py</code> and add
 <code>sphinx.ext.mathjax</code>:</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>, <span class="st">'sphinx.ext.mathjax'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>, <span class="st">'sphinx.ext.mathjax'</span>]</span></code></pre>
 </div>
 <p>Try this (result below):</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="an">This creates an equation:</span></span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="in">```{math}</span></span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="in">a^2 + b^2 = c^2</span></span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>This is an in-line equation, {math}<span class="in">`a^2 + b^2 = c^2`</span>, embedded in text.</span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="an">This creates an equation:</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="in">```{math}</span></span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="in">a^2 + b^2 = c^2</span></span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>This is an in-line equation, {math}<span class="in">`a^2 + b^2 = c^2`</span>, embedded in text.</span></code></pre>
 </div>
 <p>This creates an equation: <code>{math} a^2 + b^2 = c^2</code></p>
 <p>This is an in-line equation, {math}<code>a^2 + b^2 = c^2</code>,
@@ -1604,45 +1574,45 @@ embedded in text.</p>
 <li>Write some docstrings in functions and/or class definitions of an
 <code>example</code> python module:</li>
 </ol>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="kw">def</span> multiply(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="co">    Multiply two numbers.</span></span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a><span class="co">    :param a: First number.</span></span>
-<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="co">    :param b: Second number.</span></span>
-<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a><span class="co">    :return: The product of a and b.</span></span>
-<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="kw">def</span> multiply(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a><span class="co">    Multiply two numbers.</span></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a><span class="co">    :param a: First number.</span></span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a><span class="co">    :param b: Second number.</span></span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a><span class="co">    :return: The product of a and b.</span></span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
 </div>
 <ol start="2" style="list-style-type: decimal">
 <li>In the file <code>conf.py</code> modify “extensions” and add 3
 lines:</li>
 </ol>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>, <span class="st">"autodoc2"</span>]</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>autodoc2_packages <span class="op">=</span> [</span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>    <span class="st">"multiply.py"</span></span>
-<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>, <span class="st">"autodoc2"</span>]</span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>autodoc2_packages <span class="op">=</span> [</span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>    <span class="st">"multiply.py"</span></span>
+<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a>]</span></code></pre>
 </div>
 <ol start="4" style="list-style-type: decimal">
 <li>List <code>apidocs/index</code> in the toctree in
 <code>index.rst</code>.</li>
 </ol>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">RST<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>   some-feature.md</span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>   apidocs/index</span></code></pre>
+<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>   some-feature.md</span>
+<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a>   apidocs/index</span></code></pre>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li>Re-build the documentation and check the “API reference”
@@ -2377,8 +2347,8 @@ any links that you are not going to use.
   "url": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/aio.html",
   "identifier": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/aio.html",
   "dateCreated": "2024-03-27",
-  "dateModified": "2025-03-11",
-  "datePublished": "2025-03-11"
+  "dateModified": "2025-03-12",
+  "datePublished": "2025-03-12"
 }
 
   </script><script>

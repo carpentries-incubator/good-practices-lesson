@@ -322,7 +322,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Document your research software</h1>
-        <p>Last updated on 2025-03-11 |
+        <p>Last updated on 2025-03-12 |
 
         <a href="https://github.com/esciencecenter-digital-skills/good-practices-lesson/edit/main/episodes/3-documentation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -371,7 +371,7 @@ documentation</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Use <a href="https://esciencecenter-digital-skills.github.io/digital-skills-slides/modules/good-practices-lesson/documentation-slides" class="external-link">these
 slides</a> as a guidance.</p>
@@ -417,7 +417,7 @@ collaborate on, or papers you had to reproduce.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul><li>It is important to document code</li>
 <li>Think about the people reading your documentation (your
@@ -434,7 +434,7 @@ thought out README file is enough.</li>
 </section><section><h2 class="section-heading" id="types-of-documentation">Types of documentation<a class="anchor" aria-label="anchor" href="#types-of-documentation"></a></h2>
 <hr class="half-width"><p>There are different types of documentation:</p>
 <ul><li>README and CITATION files</li>
-<li>in-code documentation (Docstrings)</li>
+<li>in-code documentation (comments and docstrings)</li>
 <li>Tutorials</li>
 </ul></section><section><h2 class="section-heading" id="writing-good-readme-files">Writing good README files<a class="anchor" aria-label="anchor" href="#writing-good-readme-files"></a></h2>
 <hr class="half-width"><p>The README file is the first thing a user/collaborator sees. It
@@ -549,10 +549,10 @@ GitHub. What has happened?</li>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="in-code-documentation">In-code documentation<a class="anchor" aria-label="anchor" href="#in-code-documentation"></a></h2>
-<hr class="half-width"><p>Documentation strings: - Makes code more understandable - Explains
-decisions we made</p>
+<hr class="half-width"><p>In-code documentation makes code more understandable and explains
+decisions we made.</p>
 <div class="section level3">
-<h3 id="when-not-to-use-in-code-documentation">When not to use in-code documentation:<a class="anchor" aria-label="anchor" href="#when-not-to-use-in-code-documentation"></a></h3>
+<h3 id="when-not-to-use">When not to use:<a class="anchor" aria-label="anchor" href="#when-not-to-use"></a></h3>
 <ul><li>When the code is self-explanatory</li>
 <li>To replace good variable/function names</li>
 <li>To replace version control</li>
@@ -574,15 +574,14 @@ decisions we made</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">def</span> celsius_to_fahrenheit(degrees):</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>    <span class="cf">return</span> degrees <span class="op">*</span> <span class="dv">5</span> <span class="op">/</span> <span class="dv">9</span> <span class="op">+</span> <span class="dv">32</span></span></code></pre>
 </div>
-<div id="writing-good-comments---in-code-1-comments" class="callout challenge">
+<div id="exercise-writing-good-in-code-comments" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="writing-good-comments---in-code-1-comments" class="callout-inner">
-<h3 class="callout-title">Writing good comments - In-code-1: Comments</h3>
+<div id="exercise-writing-good-in-code-comments" class="callout-inner">
+<h3 class="callout-title">Exercise: Writing good in-code comments</h3>
 <div class="callout-content">
-<p>Let’s take a look at two example comments (comments in Python start
-with <code>#</code>):</p>
+<p>Let’s take a look at two example comments:</p>
 <p><strong>Comment A</strong></p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -609,8 +608,9 @@ why?</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
+<p>Comment B is the correct choice!</p>
 <ul><li>
 <strong>Comment A</strong> describes <strong>what</strong> happens
 in this piece of code. This can be useful for somebody who has never
@@ -627,8 +627,10 @@ redundant commentary.</li>
 </div>
 <div class="section level3">
 <h3 id="what-are-docstrings-and-how-can-they-be-useful">What are “docstrings” and how can they be useful?<a class="anchor" aria-label="anchor" href="#what-are-docstrings-and-how-can-they-be-useful"></a></h3>
-<p>Here is function <code>fahrenheit_to_celsius</code> which converts
-temperature in Fahrenheit to Celsius.</p>
+<p>Docstrings are a special kind of comment that are used to document
+functions, classes and modules. Here is function
+<code>fahrenheit_to_celsius</code> which converts temperature in
+Fahrenheit to Celsius.</p>
 <p>The first set of examples uses <strong>regular comments</strong>:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -641,45 +643,129 @@ temperature in Fahrenheit to Celsius.</p>
 <p>The second set uses <strong>docstrings or similar concepts</strong>.
 Please compare the two (above and below):</p>
 <div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">PY<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode py" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(temp_f: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> fahrenheit_to_celsius(temp_f: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">    Converts a temperature in Fahrenheit to Celsius.</span></span>
 <span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">    temp_f : float</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">        The temperature in Fahrenheit.</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">    float</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">        The temperature in Celsius.</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    temp_c <span class="op">=</span> (temp_f <span class="op">-</span> <span class="fl">32.0</span>) <span class="op">*</span> (<span class="fl">5.0</span><span class="op">/</span><span class="fl">9.0</span>)</span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>    <span class="cf">return</span> temp_c</span></code></pre>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">        temp_f: The temperature in Fahrenheit.</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">        The temperature in Celsius.</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>    temp_c <span class="op">=</span> (temp_f <span class="op">-</span> <span class="fl">32.0</span>) <span class="op">*</span> (<span class="fl">5.0</span><span class="op">/</span><span class="fl">9.0</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>    <span class="cf">return</span> temp_c</span></code></pre>
 </div>
+<p>Unlike regular comments, docstrings are stored as an attribute
+(<code>__doc__</code>) of the object they document and can be extracted
+programmatically.</p>
 <p>Docstrings are more powerful than comments:</p>
-<ul><li>Docstrings are automatically extracted when calling the help
-function.</li>
-<li>Tools can generate documentation pages automatically from docstrings
-known as API documentation.</li>
-</ul><p>It is common to write docstrings for functions, classes, and
-modules.</p>
-<p>TODO: Introduce how to write docstrings and show an example of API
-documentation. Good docstrings describe: - What the function does - What
-goes in (including the type of the input variables) - What goes out
-(including the return type)</p>
-<p><strong>Naming is documentation</strong>: Giving explicit,
-descriptive names to your code segments (functions, classes, variables)
-already provides very useful and important documentation. In practice
-you will find that for simple functions it is unnecessary to add a
-docstring when the function name and variable names already give enough
-information.</p>
-<p>TODO: Add docstring exercise. Idea add docstrings to convertion
-function and improve naming.</p>
+<ul><li>Docstrings are automatically extracted when calling the
+<code>help</code> function.</li>
+<li>Tools (e.g. <code>mkdocs</code>, <code>sphinx</code>) can generate
+documentation pages automatically from docstrings known as API
+documentation.</li>
+</ul><p>A good docstring should describe:</p>
+<ul><li>What the function does</li>
+<li>What goes in (including the type of the input variables)</li>
+<li>What goes out (including the return type)</li>
+</ul><p>There are different docstrings styles, such as Google style, numpy
+style and reStructered style, with Google style being the most common.
+See documentation <a href="https://google.github.io/styleguide/pyguide.html#doc-function-args" class="external-link">here</a>
+for more information.</p>
+<div id="exercise-identify-a-proper-docstring" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="exercise-identify-a-proper-docstring" class="callout-inner">
+<h3 class="callout-title">Exercise: Identify a proper docstring</h3>
+<div class="callout-content">
+<p>Which of the following options is the correct function with a proper
+docstring?</p>
+<p><strong>Option A</strong></p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">def</span> check_unit_validity(unit: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">    Checks if a unit is valid.</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">        unit: The unit to check. Must be "C", "F", or "K".</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">        True if the unit is valid, False otherwise.</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> unit <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre>
+</div>
+<p><strong>Option B</strong></p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">def</span> check_unit_validity(unit):</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">    Checks if a unit is valid.</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">        unit (str): The unit to check. Must be "C", "F", or "K".</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="co">        bool: True if the unit is valid, False otherwise.</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> unit <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre>
+</div>
+<p><strong>Option C</strong></p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">def</span> check_unit_validity(unit: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">    Validates the unit.</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co">        unit (str): The unit to check.</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="co">        bool: True if the unit is valid, False otherwise.</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> unit <span class="kw">in</span> [<span class="st">"C"</span>, <span class="st">"F"</span>, <span class="st">"K"</span>]:</span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p>Option A and B are both correct choices!</p>
+<ul><li>
+<strong>Option A</strong>: The docstring is detailed. It does not
+require types (str, bool) since they are already specified in the
+function signature.</li>
+<li>
+<strong>Option B</strong>: The docstring is detailed and includes
+descriptions of the arguments and return type since they are not
+specified in the function signature.</li>
+<li>
+<strong>Option C</strong>: The docstring is missing the specific
+valid units (“C”, “F”, “K”) in the description of the unit parameter,
+making it less informative.</li>
+</ul></div>
+</div>
+</div>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="tools-for-generating-and-deploying-documentation">Tools for generating and deploying documentation<a class="anchor" aria-label="anchor" href="#tools-for-generating-and-deploying-documentation"></a></h2>
 <hr class="half-width"><p>You can use the following tools to generate user or API
@@ -700,7 +786,7 @@ Markdown.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
   <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
 <p>Please note that writing documentation using Sphinx is an optional
 part in this workshop. For some learners it is enough to know that
@@ -719,7 +805,7 @@ this section when teaching this episode.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Sphinx quickstart demo and optional exercises </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Create a directory for the example documentation, step into it, and
 inside generate the basic documentation template:</p>
@@ -757,28 +843,28 @@ build scripts that wrap the sphinx commands, but we will be doing it
 explicitly.</p>
 <p>Let’s have a look at the <code>index.rst</code> file, which is the
 main file of your documentation:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">RST<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">.. myproject documentation master file, created by</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="dt">   </span><span class="co">sphinx-quickstart on Sat Sep 23 17:35:26 2023.</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="dt">   </span><span class="co">You can adapt this file completely to your liking, but it should at least</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="dt">   </span><span class="co">contain the root `toctree` directive.</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>Welcome to myproject's documentation!</span>
-<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>=====================================</span>
-<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
-<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
-<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>Indices and tables</span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>==================</span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a></span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`genindex`</span></span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`modindex`</span></span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`search`</span></span></code></pre>
+<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">.. myproject documentation master file, created by</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="dt">   </span><span class="co">sphinx-quickstart on Sat Sep 23 17:35:26 2023.</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="dt">   </span><span class="co">You can adapt this file completely to your liking, but it should at least</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="dt">   </span><span class="co">contain the root `toctree` directive.</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>Welcome to myproject's documentation!</span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>=====================================</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a>Indices and tables</span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>==================</span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`genindex`</span></span>
+<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`modindex`</span></span>
+<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a>* <span class="kw">:ref:</span><span class="dv">`search`</span></span></code></pre>
 </div>
 <ul><li>We will not use the <code>Indices and tables</code> section now, so
 remove it and everything below.</li>
@@ -786,50 +872,50 @@ remove it and everything below.</li>
 comment.</li>
 <li>The next lines are the table of contents. We can add content
 below:</li>
-</ul><div class="codewrapper sourceCode" id="cb11">
+</ul><div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">RST<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>   some-feature.md</span></code></pre>
+<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>   some-feature.md</span></code></pre>
 </div>
 <p>Note that <code>some-feature.md</code> needs to be indented to align
 with <code>:caption:</code>.</p>
 <p>We now need to tell Sphinx to use markdown files. To do this, we open
 <code>conf.py</code> and replace the line:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>extensions <span class="op">=</span> []</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>extensions <span class="op">=</span> []</span></code></pre>
 </div>
 <p>with this line so that Sphinx can parse Markdown files:</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>]</span></code></pre>
 </div>
 <p>Let’s create the file <code>some-feature.md</code> (in Markdown
 format) which we have just listed in <code>index.rst</code> (which uses
 reStructured Text format).</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">MD<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu"># Some feature</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="fu">## Subsection</span></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>Exciting documentation in here.</span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>Let's make a list (empty surrounding lines required):</span>
-<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="ss">- </span>item 1</span>
-<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a><span class="ss">  - </span>nested item 1</span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="ss">  - </span>nested item 2</span>
-<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a></span>
-<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="ss">- </span>item 2</span>
-<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="ss">- </span>item 3</span></code></pre>
+<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu"># Some feature</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="fu">## Subsection</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>Exciting documentation in here.</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>Let's make a list (empty surrounding lines required):</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="ss">- </span>item 1</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a><span class="ss">  - </span>nested item 1</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="ss">  - </span>nested item 2</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="ss">- </span>item 2</span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a><span class="ss">- </span>item 3</span></code></pre>
 </div>
 <p>We now build the site:</p>
 <pre class="console"><code>$ ls -1
@@ -902,69 +988,69 @@ Typography</a> page as help.</li>
 </ol><p>Experiment with the following Markdown syntax:</p>
 <ul><li><p>*Emphasized text* and **bold text**</p></li>
 <li><p>Headings:</p></li>
-</ul><div class="codewrapper sourceCode" id="cb19">
+</ul><div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">MD<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu"># Level 1</span></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="fu">## Level 2</span></span>
-<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="fu">### Level 3</span></span>
-<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="fu">#### Level 4</span></span></code></pre>
+<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu"># Level 1</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="fu">## Level 2</span></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="fu">### Level 3</span></span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a><span class="fu">#### Level 4</span></span></code></pre>
 </div>
 <ul><li><p>An image: <code>![alt text](image.png)</code></p></li>
 <li><p><code>[A link](https://www.example.org)</code></p></li>
 <li><p>Numbered lists (numbers adjusted automatically):</p></li>
-</ul><div class="codewrapper sourceCode" id="cb20">
+</ul><div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">MD<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ss">1. </span>item 1</span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="ss">2. </span>item 2</span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="ss">3. </span>item 3</span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="ss">1. </span>item 4</span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="ss">1. </span>item 5</span></code></pre>
+<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ss">1. </span>item 1</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="ss">2. </span>item 2</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="ss">3. </span>item 3</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="ss">1. </span>item 4</span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="ss">1. </span>item 5</span></code></pre>
 </div>
 <ul><li>Simple tables:</li>
-</ul><div class="codewrapper sourceCode" id="cb21">
+</ul><div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">MD<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="pp">|</span> No.  <span class="pp">|</span>  Prime <span class="pp">|</span></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="pp">| ----</span> <span class="pp">| ------</span> <span class="pp">|</span></span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="pp">|</span> 1    <span class="pp">|</span>  No    <span class="pp">|</span></span>
-<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a><span class="pp">|</span> 2    <span class="pp">|</span>  Yes   <span class="pp">|</span></span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a><span class="pp">|</span> 3    <span class="pp">|</span>  Yes   <span class="pp">|</span></span>
-<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a><span class="pp">|</span> 4    <span class="pp">|</span>  No    <span class="pp">|</span></span></code></pre>
+<pre class="sourceCode md" tabindex="0"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="pp">|</span> No.  <span class="pp">|</span>  Prime <span class="pp">|</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="pp">| ----</span> <span class="pp">| ------</span> <span class="pp">|</span></span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a><span class="pp">|</span> 1    <span class="pp">|</span>  No    <span class="pp">|</span></span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a><span class="pp">|</span> 2    <span class="pp">|</span>  Yes   <span class="pp">|</span></span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a><span class="pp">|</span> 3    <span class="pp">|</span>  Yes   <span class="pp">|</span></span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a><span class="pp">|</span> 4    <span class="pp">|</span>  No    <span class="pp">|</span></span></code></pre>
 </div>
 <ul><li>Code blocks:</li>
-</ul><div class="codewrapper sourceCode" id="cb22">
+</ul><div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="an">The following is a Python code block:</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>  <span class="kw">def</span> hello():</span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Hello world"</span>)</span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>And this is a C code block:</span>
-<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a><span class="in">```c</span></span>
-<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
-<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello, World!"</span><span class="op">);</span></span>
-<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a><span class="in">```</span></span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="an">The following is a Python code block:</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>  <span class="kw">def</span> hello():</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Hello world"</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>And this is a C code block:</span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a><span class="in">```c</span></span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"Hello, World!"</span><span class="op">);</span></span>
+<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
 <ul><li>You could include an external file (here we assume a file called
 “example.py” exists; at the same time we highlight lines 2 and 3):</li>
-</ul><div class="codewrapper sourceCode" id="cb23">
+</ul><div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="in">```{literalinclude} example.py</span></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="in">:language: python</span></span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="in">:emphasize-lines: 2-3</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="in">```</span></span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="in">```{literalinclude} example.py</span></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="in">:language: python</span></span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="in">:emphasize-lines: 2-3</span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="in">```</span></span></code></pre>
 </div>
 <ul><li>We can also use Jupyter notebooks (*.ipynb) with Sphinx. It requires
 the <a href="https://myst-nb.readthedocs.io/" class="external-link">myst-nb</a> extension to
@@ -982,21 +1068,21 @@ be installed.</li>
 <p>Math equations should work out of the box. In some older versions,
 you might need to edit <code>conf.py</code> and add
 <code>sphinx.ext.mathjax</code>:</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>, <span class="st">'sphinx.ext.mathjax'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>, <span class="st">'sphinx.ext.mathjax'</span>]</span></code></pre>
 </div>
 <p>Try this (result below):</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="an">This creates an equation:</span></span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="in">```{math}</span></span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="in">a^2 + b^2 = c^2</span></span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>This is an in-line equation, {math}<span class="in">`a^2 + b^2 = c^2`</span>, embedded in text.</span></code></pre>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="an">This creates an equation:</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a><span class="in">```{math}</span></span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a><span class="in">a^2 + b^2 = c^2</span></span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>This is an in-line equation, {math}<span class="in">`a^2 + b^2 = c^2`</span>, embedded in text.</span></code></pre>
 </div>
 <p>This creates an equation: <code>{math} a^2 + b^2 = c^2</code></p>
 <p>This is an in-line equation, {math}<code>a^2 + b^2 = c^2</code>,
@@ -1013,41 +1099,41 @@ embedded in text.</p>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>Write some docstrings in functions and/or class definitions of an
 <code>example</code> python module:</li>
-</ol><div class="codewrapper sourceCode" id="cb26">
+</ol><div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="kw">def</span> multiply(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="co">    Multiply two numbers.</span></span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a><span class="co">    :param a: First number.</span></span>
-<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="co">    :param b: Second number.</span></span>
-<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a><span class="co">    :return: The product of a and b.</span></span>
-<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="kw">def</span> multiply(a: <span class="bu">float</span>, b: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a><span class="co">    Multiply two numbers.</span></span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a><span class="co">    :param a: First number.</span></span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a><span class="co">    :param b: Second number.</span></span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a><span class="co">    :return: The product of a and b.</span></span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span></code></pre>
 </div>
 <ol start="2" style="list-style-type: decimal"><li>In the file <code>conf.py</code> modify “extensions” and add 3
 lines:</li>
-</ol><div class="codewrapper sourceCode" id="cb27">
+</ol><div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>, <span class="st">"autodoc2"</span>]</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>autodoc2_packages <span class="op">=</span> [</span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>    <span class="st">"multiply.py"</span></span>
-<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a>extensions <span class="op">=</span> [<span class="st">'myst_parser'</span>, <span class="st">"autodoc2"</span>]</span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>autodoc2_packages <span class="op">=</span> [</span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>    <span class="st">"multiply.py"</span></span>
+<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a>]</span></code></pre>
 </div>
 <ol start="4" style="list-style-type: decimal"><li>List <code>apidocs/index</code> in the toctree in
 <code>index.rst</code>.</li>
-</ol><div class="codewrapper sourceCode" id="cb28">
+</ol><div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">RST<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>   some-feature.md</span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>   apidocs/index</span></code></pre>
+<pre class="sourceCode rst" tabindex="0"><code class="sourceCode rest"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="dt">.. toctree::</span></span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>   <span class="fu">:maxdepth:</span> 2</span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>   <span class="fu">:caption:</span> Contents:</span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>   some-feature.md</span>
+<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a>   apidocs/index</span></code></pre>
 </div>
 <ol start="5" style="list-style-type: decimal"><li>Re-build the documentation and check the “API reference”
 section.</li>
@@ -1071,7 +1157,7 @@ documentation.</li>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor3" aria-expanded="false" aria-controls="collapseInstructor3">
   <h3 class="accordion-header" id="headingInstructor3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor3" class="accordion-collapse collapse" aria-labelledby="headingInstructor3" data-bs-parent="#accordionInstructor3">
+<div id="collapseInstructor3" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor3" aria-labelledby="headingInstructor3">
 <div class="accordion-body">
 <p>You can show the example documentation deployed on GitHub pages here:
 <a href="https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/" class="external-link uri">https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/</a></p>
@@ -1168,8 +1254,8 @@ any links that you are not going to use.
   "url": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/3-documentation.html",
   "identifier": "https://esciencecenter-digital-skills.github.io/good-practices-lesson/instructor/3-documentation.html",
   "dateCreated": "2024-03-27",
-  "dateModified": "2025-03-11",
-  "datePublished": "2025-03-11"
+  "dateModified": "2025-03-12",
+  "datePublished": "2025-03-12"
 }
 
   </script><script>
