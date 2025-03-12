@@ -351,11 +351,13 @@ MkDocs and Sphinx:
 ::: challenge
 ### Exercise: Generate MkDocs documentation
 
-Make sure that you have installed mkdocs:
+Before we start generating documentation, make sure that you have installed mkdocs:
 
-`conda list mkdocs`
+```bash
+conda list mkdocs
+```
 
-Create a new MkDocs project in your current project directory: 
+Now, Lets create a new MkDocs project in the current project directory which contains the temperature conversion code: 
 
 ```bash
 # In temperature-conversion
@@ -379,19 +381,22 @@ theme:
 font: false
 nav:
   - Temperature Conversion Documentation: index.md
-  - Tutorials: tutorials.md
-  - How-To Guides: how-to-guides.md
-  - Reference: reference.md
-  - Background: explanation.md
 
 plugins:
   - mkdocstrings
 ```
 
+Now that we have a basic structure for our docs, we can build them!
+
 ```bash
 mkdocs build
+```
+Then we can view these locally with:
+
+```bash
 mkdocs serve
 ```
+
 ::: 
 
 #### Sphinx
