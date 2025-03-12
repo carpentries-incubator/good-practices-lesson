@@ -770,7 +770,32 @@ autodoc2_packages = [
 ### Deploying documentation using Github pages
 
 - GitHub pages can be setup inside your GitHub repository
-- It automatically deploys your Sphinx-generated documentation. Or in other words it creates a website for you that renders your documentation.
+- It automatically deploys your MkDocs or Sphinx-generated documentation. Or in other words it creates a website for you that renders your documentation.
+
+::: challenge
+###### Exercise: Deploy documentation to GitHub Pages
+
+(If not done already) lets commit our changes to the main branch and push our changes to GitHub
+
+```bash
+git add mkdocs.yml
+git add docs/
+git add site/
+git commit -m "Add API documentation"
+git push origin main
+```
+We can then deploy our documentation to gh-pages with mkdocs, this will:
+- Push the documentation to a gh-pages branch of your repository (& create it if it does not exist)
+- It will also include uncommitted changes and untracked files, which could cause problems later
+
+<b>! Important ! Make sure there are no uncommitted changes and that your main branch is clean before running the following command! </b>
+
+In the terminal run:
+```bash
+mkdocs gh-deploy
+```
+You can then go to your GitHub repository to view your documentation. 
+:::
 
 ::: instructor
 You can show the example documentation deployed on GitHub pages here: https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/
