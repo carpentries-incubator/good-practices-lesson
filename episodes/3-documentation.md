@@ -396,8 +396,52 @@ Then we can view these locally with:
 ```bash
 mkdocs serve
 ```
+:::
 
-::: 
+:::::::::::::::::::::::::::::::::::::::  spoiler
+##### Adding API documentation with MkDocs
+
+::: challenge
+##### (Optional) exercise: Add API documentation
+
+Earlier in this section, we added docstrings to the functions in `temperature_conversion.py`. These can be converted to API documentation so that users can easily look up how to use functions. 
+Firstly, lets create a new file called `api.md` in the `docs` directory:
+
+```bash
+cd docs/
+touch api.md
+```
+In this file, add the name of your module:
+
+```bash
+:::temperature_conversion
+```
+
+Now, let's add our new file to the `mkdocs.yml` configuration file: 
+
+```yaml
+site_name: Temperature Conversion Documentation
+use_directory_urls: false
+theme:
+  name: "material"
+font: false
+nav:
+  - Temperature Conversion Documentation: index.md
+  - API Documentation: api.md
+
+plugins:
+  - mkdocstrings
+```
+
+Build and serve the documentation again:
+
+```bash
+mkdocs build
+mkdocs serve
+```
+:::
+:::::::::::::::::::::::::::::::::::::::
+
 
 #### Sphinx
 Like MkDocs, Sphinx is a documetatation generator which translates a set of plain text source files into various output formats. It natively supports reStructuredText (rST) and with some extensions also supports Markdown.
