@@ -64,6 +64,7 @@ conda activate myenv
 conda install pytest
 conda install conda-forge::mkdocs
 conda install conda-forge::mkdocs-material
+conda install sphinx
 ```
 
 You should now have a conda environment with pytest in it. Verify the environment:
@@ -72,6 +73,8 @@ You should now have a conda environment with pytest in it. Verify the environmen
 python --version
 pytest --version
 mkdocs --version
+sphinx-build --version
+sphinx-quickstart --version
 ```
 
 which should return something like:
@@ -80,7 +83,11 @@ which should return something like:
 Python 3.13.1
 pytest 8.3.4
 mkdocs 1.6.1
+sphinx-build 8.1.3
+sphinx-quickstart 8.1.3
 ```
+
+Please note that `sphinx` is used for optional exercises, so if you do not install this package now, it can be done when needed during the workshop. 
 
 To deactivate the environment, run
 

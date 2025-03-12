@@ -4,21 +4,21 @@ teaching: 15
 exercises: 0
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+::: questions 
 
 - What are benefits of applying software engineering good practices?
 - How does software engineering differ from programming?
 - When to use which tools?
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
 
 - Understand the benefits of applying software engineering good practices
 - Understand the key characteristics that make code modular and why it is advantageous.
 - Know when to use which software engineering tools.
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 Look through [these introduction slides](https://esciencecenter-digital-skills.github.io/digital-skills-slides/modules/good-practices-lesson/good-practices-slides).
 
@@ -44,9 +44,9 @@ The tool can add overhead in simple projects, but can speed up development in mo
 Which good practices are relevant for your project and why?
 :::
 
-::::::::::::::::::::::::::::::::::::: keypoints 
+::: keypoints 
 
 - Software engineering tools and skills can increase development speed over time
 - You do not always need to apply all the best practices. For simple short-lived projects it is not always worth the investment.
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
