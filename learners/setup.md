@@ -64,6 +64,7 @@ conda activate myenv
 conda install pytest
 conda install conda-forge::mkdocs
 conda install conda-forge::mkdocs-material
+conda install conda-forge::mkdocstrings
 conda install sphinx
 ```
 
