@@ -346,7 +346,6 @@ MkDocs and Sphinx:
 - create nicely-formatted HTML pages out of .md or .rST files
 - programming language independent
 
-<<<<<<< HEAD
 #### MkDocs
 
 ::: challenge
@@ -394,7 +393,6 @@ mkdocs build
 mkdocs serve
 ```
 ::: 
-=======
 
 #### Sphinx
 Like MkDocs, Sphinx is a documetatation generator which translates a set of plain text source files into various output formats. It natively supports reStructuredText (rST) and with some extensions also supports Markdown.
@@ -719,7 +717,6 @@ autodoc2_packages = [
 :::
 
 :::::::::::::::::::::::::::::::::::::::  
->>>>>>> main
 
 ### Deploying documentation using Github pages
 
