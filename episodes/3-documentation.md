@@ -346,6 +346,107 @@ MkDocs and Sphinx:
 - create nicely-formatted HTML pages out of .md or .rST files
 - programming language independent
 
+#### MkDocs
+
+::: challenge
+### Exercise: Generate MkDocs documentation
+
+Before we start generating documentation, make sure that you have installed mkdocs:
+
+```bash
+conda list mkdocs
+```
+
+Now, Lets create a new MkDocs project in the current project directory which contains the temperature conversion code: 
+
+```bash
+# In temperature-conversion
+mkdocs new .    
+```
+```output
+INFO    -  Writing config file: ./mkdocs.yml
+INFO    -  Writing initial docs: ./docs/index.md
+```
+
+This command creates a new MkDocs project in the current directory with a `docs` folder containing an `index.md` file 
+and a `mkdocs.yml` configuration file in the root of our project. If you look in the `index.md`, you can see that it currently contains default information about MkDocs.
+You can change this by writing a brief overview of the project or copying the contents of your `README.md`
+
+Now, let's fill in the `mkdocs.yml` configuration file for our project.
+
+```yaml
+site_name: Temperature Conversion
+
+theme:
+  name: "material"
+  font: false
+
+nav:
+  - Overview: index.md
+
+plugins:
+  - search
+  - mkdocstrings
+```
+
+Now that we have a basic structure for our docs, we can build them!
+
+```bash
+mkdocs build
+```
+Then we can view these locally by running the following command and clicking on the generated link:
+
+```bash
+mkdocs serve
+```
+:::
+
+:::::::::::::::::::::::::::::::::::::::  spoiler
+##### Adding API documentation with MkDocs
+
+::: challenge
+##### (Optional) exercise: Add API documentation
+
+Earlier in this section, we added docstrings to the functions in `temperature_conversion.py`. These can be converted to API documentation so that users can easily look up how to use functions. 
+Firstly, lets create a new file called `api.md` in the `docs` directory:
+
+```bash
+cd docs/
+touch api.md
+```
+In this file, add the name of your module:
+
+```bash
+:::temperature_conversion
+```
+
+Now, let's add our new file to the `mkdocs.yml` configuration file: 
+
+```yaml
+site_name: Temperature Conversion
+
+theme:
+  name: "material"
+  font: false
+
+nav:
+  - Overview: index.md
+  - API Documentation: api.md
+
+plugins:
+  - search
+  - mkdocstrings
+```
+
+Build and serve the documentation again:
+
+```bash
+mkdocs build
+mkdocs serve
+```
+:::
+:::::::::::::::::::::::::::::::::::::::
+
 
 #### Sphinx
 Like MkDocs, Sphinx is a documetatation generator which translates a set of plain text source files into various output formats. It natively supports reStructuredText (rST) and with some extensions also supports Markdown.
@@ -674,9 +775,36 @@ autodoc2_packages = [
 ### Deploying documentation using Github pages
 
 - GitHub pages can be setup inside your GitHub repository
-- It automatically deploys your Sphinx-generated documentation. Or in other words it creates a website for you that renders your documentation.
+- It automatically deploys your MkDocs or Sphinx-generated documentation. Or in other words it creates a website for you that renders your documentation.
+
+::: challenge
+###### Exercise: Deploy documentation to GitHub Pages
+
+(If not done already) lets commit our changes to the main branch and push our changes to GitHub
+
+```bash
+git add mkdocs.yml
+git add docs/
+git add site/
+git commit -m "Add documentation"
+git push origin main
+```
+We can then deploy our documentation to gh-pages with mkdocs, this will:
+- Push the documentation to a gh-pages branch of your repository (& create it if it does not exist)
+- It will also include uncommitted changes and untracked files, which could cause problems later
+
+<b>! Important ! Make sure there are no uncommitted changes and that your main branch is clean before running the following command! </b>
+
+In the terminal run:
+```bash
+mkdocs gh-deploy
+```
+The output should give you some information on where the documentation can be found, click on the generated link to view the documentation! You can then also copy the link to add to the "about" section of your repository so that users can find the documentation easily. 
+:::
 
 ::: instructor
+You can show what the results of this exercise are here: https://clairedons.github.io/temperature-conversion/ and perhaps explain how to add the link to the repository. 
+
 You can show the example documentation deployed on GitHub pages here: https://esciencecenter-digital-skills.github.io/good-practices-documentation-example/
 
 Then, you can show that this content comes from simple markdown files, like: https://github.com/esciencecenter-digital-skills/good-practices-documentation-example/blob/main/doc/another-feature.md?plain=1
