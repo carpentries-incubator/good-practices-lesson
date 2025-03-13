@@ -62,10 +62,7 @@ Create a conda environment and install `pytest`.
 conda create --name myenv
 conda activate myenv
 conda install pytest
-conda install conda-forge::mkdocs
-conda install conda-forge::mkdocs-material
-conda install conda-forge::mkdocstrings
-conda install conda-forge::mkdocstrings-python
+conda install conda-forge::mkdocs conda-forge::mkdocs-material conda-forge::mkdocstrings conda-forge::mkdocstrings-python
 conda install sphinx
 ```
 
