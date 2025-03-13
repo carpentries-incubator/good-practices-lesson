@@ -379,7 +379,7 @@ site_name: Temperature Conversion
 
 theme:
   name: "material"
-font: false
+  font: false
 
 nav:
   - Overview: index.md
@@ -427,7 +427,7 @@ site_name: Temperature Conversion
 
 theme:
   name: "material"
-font: false
+  font: false
 
 nav:
   - Overview: index.md
@@ -786,7 +786,7 @@ autodoc2_packages = [
 git add mkdocs.yml
 git add docs/
 git add site/
-git commit -m "Add API documentation"
+git commit -m "Add documentation"
 git push origin main
 ```
 We can then deploy our documentation to gh-pages with mkdocs, this will:
